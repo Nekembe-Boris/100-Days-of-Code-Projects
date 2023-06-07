@@ -17,7 +17,6 @@ print("Your mission is to find the treasure.")
 
 junction = input("You're at a confluence which direction do you want to take? Right or Left? \n").lower()
 
-
 if junction == "left":
     step1 = input("Do you want to Wait for the yatch or Swim ? \n").lower()
     if step1 == "wait":
