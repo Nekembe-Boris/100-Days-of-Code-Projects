@@ -27,50 +27,25 @@ scissors = '''
 ---.__(___)
 '''
 
+game_list =[rock, paper, scissors]
+
 choice = int(input("\nWhat do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors. \n"))
 
-
-sign = "Any"
-
-if choice == 0:
-    sign = rock
-elif choice == 1:
-    sign = paper
-elif choice == 2:
-    sign = scissors
-else:
+if choice < 0 or choice > 2:
     print("You entered a wrong number. Please enter a valid number")
-
-
+else:
+    print(f"You chose \n{game_list[choice]}")
 
 random_int = random.randrange(0, 2)
+print(f"The computer chose \n{game_list[random_int]}")
 
-random_sign = "Any"
-
-if random_int == 0:
-    random_sign = rock
-elif random_int == 1:
-    random_sign = paper
-else:
-    random_sign = scissors
-
-
-
-if sign == random_sign:
-    print(f"You chose\n {sign})")
-    print(f"The computer chose\n {random_sign}")
+if choice == random_int:
     print("There is a draw!")
-elif (sign == rock) and (random_sign == scissors):
-    print(f"You chose\n {sign})")
-    print(f"The computer chose\n {random_sign}")
+elif (choice == 0) and (random_int == 2):
     print("You won!")
-elif (sign == scissors) and (random_sign == paper):
-    print(f"You chose\n {sign})")
-    print(f"The computer chose\n {random_sign}")
+elif (choice == 2) and (random_int == 1):
     print("You won!")
-elif (sign == paper) and (random_sign == rock):
-    print(f"You chose\n {sign})")
-    print(f"The computer chose\n {random_sign}")
+elif (choice == 1) and (random_int == 0):
     print("You won!")
 else:
     print("You lose")
