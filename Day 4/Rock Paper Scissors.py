@@ -41,8 +41,7 @@ else:
 
 
 
-random_int = random.randint(0, 2)
-print(random_int)
+random_int = random.randrange(0, 2)
 
 random_sign = "Any"
 
