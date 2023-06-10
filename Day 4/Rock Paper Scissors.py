@@ -28,7 +28,7 @@ scissors = '''
 '''
 
 choice = int(input("\nWhat do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors. \n"))
-print(type(choice))
+
 
 sign = "Any"
 
@@ -39,7 +39,6 @@ elif choice == 1:
 else:
     sign = scissors
 
-print(sign)
 
 
 random_int = random.randint(0, 2)
@@ -54,7 +53,7 @@ elif random_int == 1:
 else:
     random_sign = scissors
 
-print(random_sign)
+
 
 if sign == random_sign:
     print(f"You chose\n {sign})")
