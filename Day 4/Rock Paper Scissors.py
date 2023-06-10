@@ -36,21 +36,6 @@ if choice < 0 or choice > 2:
 else:
     print(f"You chose \n{game_list[choice]}")
 
-
-
-# sign = "Any"
-
-# if choice == 0:
-#     sign = rock
-# elif choice == 1:
-#     sign = paper
-# elif choice == 2:
-#     sign = scissors
-# else:
-#     print("You entered a wrong number. Please enter a valid number")
-
-
-
 random_int = random.randrange(0, 2)
 print(f"The computer chose \n{game_list[random_int]}")
 
