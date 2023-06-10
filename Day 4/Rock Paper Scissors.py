@@ -36,8 +36,10 @@ if choice == 0:
     sign = rock
 elif choice == 1:
     sign = paper
-else:
+elif choice == 2:
     sign = scissors
+else:
+    print("You entered a wrong number. Please enter a valid number")
 
 
 
