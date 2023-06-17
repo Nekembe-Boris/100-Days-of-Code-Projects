@@ -283,3 +283,26 @@ logo = '''
                     __/ |                      
                    |___/    '''
 
+
+random_word = random.choice(word_list)
+
+
+#creating an empty list
+display = []
+for letter in range(0, len(random_word)):
+    dash = "_"
+    display.append(dash)
+
+#forming a placeholder with the lenght of the random word
+placeholder = ""
+for n in range(0, len(display)):
+    all_dash = display[n]
+    placeholder = placeholder + all_dash
+
+lives_left = 6
+end_game = False
+
+print(logo)
+print("Welcome to HANGMAN!!")
+
+print(f"\nWORD: {placeholder}")
