@@ -38,15 +38,3 @@ for i in range(0, len(final)):
 
 
 print(f"Here is your password: {password}")
-
-
-
-
-
-
-
-# print(gen_letters)
-# print(gen_numbers)
-# print(gen_symbols)
-
-# print(password)
