@@ -26,7 +26,7 @@ def ceasar(action, character, code):
             crypted = alphabet[cipher]
             new_message += crypted      
   
-    print(new_message)
+    print(f"The encoded text is {new_message}")
 
   elif action == "decode":
     cipher = 0
@@ -41,7 +41,7 @@ def ceasar(action, character, code):
           cipher = letter_number - code
           original_message += alphabet[cipher]
             
-    print(original_message)
+    print(f"The original text is {original_message}")
 
   else:
     print("Your action does not match any function of the program")      
