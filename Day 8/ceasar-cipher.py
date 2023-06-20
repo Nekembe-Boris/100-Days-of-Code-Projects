@@ -14,11 +14,10 @@ def ceasar(action, character, code):
     
     for i in range(len(character)):
       letter = character[i]
-      current_letter = letter
 
       for letter_number in range(len(alphabet)):
 
-        if current_letter == alphabet[letter_number]:
+        if letter == alphabet[letter_number]:
           cipher = letter_number + code
 
           if cipher > letter_number:
@@ -35,11 +34,10 @@ def ceasar(action, character, code):
    
     for i in range(len(character)):
       new_letter = character[i]
-      key_letter = new_letter
 
       for letter_number in range(len(alphabet)):
 
-        if key_letter == alphabet[letter_number]:
+        if new_letter == alphabet[letter_number]:
           cipher = letter_number - code
           original_message += alphabet[cipher]
             
@@ -48,10 +46,3 @@ def ceasar(action, character, code):
   
 
 ceasar(direction, text, shift)
-
-
-
-# for i in range(len(alphabet)):
-#     if text == alphabet[i]:
-#       cipher = i - shift
-#       crypted = alphabet[cipher]
