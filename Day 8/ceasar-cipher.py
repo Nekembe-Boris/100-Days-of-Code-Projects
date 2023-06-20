@@ -42,7 +42,9 @@ def ceasar(action, character, code):
           original_message += alphabet[cipher]
             
     print(original_message)
-        
+
+  else:
+    print("Your action does not match any function of the program")      
   
 
 ceasar(direction, text, shift)
