@@ -46,11 +46,3 @@ def ceasar(action, character, code):
   
 
 ceasar(direction, text, shift)
-
-cipher = 0
-
-
-# for i in range(len(alphabet)):
-#     if text == alphabet[i]:
-#       cipher = i - shift
-#       crypted = alphabet[cipher]
