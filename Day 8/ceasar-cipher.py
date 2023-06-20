@@ -6,16 +6,18 @@ shift = int(input("Type the shift number:\n"))
 
 def ceasar(action, character, code):
   
+  cipher = 0
+  new_message = ""
+  original_message = ""
+
   if action == "encode":
-    cipher = 0
-    new_message = ""
+    
     for i in range(len(character)):
       letter = character[i]
-      current_letter = letter
 
       for letter_number in range(len(alphabet)):
 
-        if current_letter == alphabet[letter_number]:
+        if letter == alphabet[letter_number]:
           cipher = letter_number + code
 
           if cipher > letter_number:
@@ -29,15 +31,13 @@ def ceasar(action, character, code):
     print(f"The encoded text is {new_message}")
 
   elif action == "decode":
-    cipher = 0
-    original_message = ""
+   
     for i in range(len(character)):
-      de_letter = character[i]
-      key_letter = de_letter
+      new_letter = character[i]
 
       for letter_number in range(len(alphabet)):
 
-        if key_letter == alphabet[letter_number]:
+        if new_letter == alphabet[letter_number]:
           cipher = letter_number - code
           original_message += alphabet[cipher]
             
