@@ -1,5 +1,21 @@
 import os
 
+logo = '''
+                         ___________
+                         \         /
+                          )_______(
+                          |"""""""|_.-._,.---------.,_.-._
+                          |       | | |               | | ''-.
+                          |       |_| |_             _| |_..-'
+                          |_______| '-' `'---------'` '-'
+                          )"""""""(
+                         /_________\\
+                       .-------------.
+                      /_______________\\
+'''
+
+print(logo)
+print("Welcome to the secret Auction Program.")
 
 bidder_name = input("What is your name?: ")
 bid_amount = int(input("What is your bid?: $"))
