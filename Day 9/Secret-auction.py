@@ -47,14 +47,16 @@ while replay != False:
 
 os.system('cls')
 
-winner = ""
+winner_name = ""
+winner_bid = 0
 
 for name in range(len(bidders)):
   bid = name
   for price in bidders[bid]:
     if bidders[bid][price] > (bidders[bid][price] - 1):
-      winner = bidder_name
+      winner_name = bidder_name
+      winner_bid += bid_amount
 
 os.system
 
-print(f"The winner of the auction is {winner}.")
+print(f"The winner of the auction is {winner_name} with a bid of ${winner_bid}.")
