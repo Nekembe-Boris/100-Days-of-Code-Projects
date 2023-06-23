@@ -29,8 +29,6 @@ bidders.append(
         },
     )
 
-print(bidders)
-
 repeat = input('Are there any other bidders? Type "yes" or "no": ')
 
 while replay != False:
@@ -49,9 +47,6 @@ while replay != False:
 
 os.system('cls')
 
-#to delete
-print(bidders)
-
 winner = ""
 
 for name in range(len(bidders)):
@@ -59,7 +54,6 @@ for name in range(len(bidders)):
   for price in bidders[bid]:
     if bidders[bid][price] > (bidders[bid][price] - 1):
       winner = bidder_name
-  #to delete
 
 os.system
 
