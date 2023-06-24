@@ -43,6 +43,8 @@ operations = {
 
 def calculator():
 
+    print(logo)
+
     num1 = float(input("What is the first number?: "))
 
     for sign in operations:
@@ -64,9 +66,12 @@ def calculator():
         repeat = input(f"Type 'y' to continue calculating with {answer}. Type 'n' to start a new calculation or 'q' to exit: ")
         if repeat == "y":
             num1 = answer
-        else:
+        elif repeat == "n":
             terminate = True
             os.system('cls')
             calculator()
+        else:
+            break
+
 
 calculator()
