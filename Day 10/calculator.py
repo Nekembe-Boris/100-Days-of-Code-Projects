@@ -56,11 +56,17 @@ def calculator():
         num2 = float(input("What is the next number?: "))
 
         for symbol in operations:
-            if action == operations[symbol]:
+            if action == symbol:
                 answer = operations[symbol](num1, num2)
 
         print(f"{num1} {action} {num2} = {answer}")
 
-        repeat = input(f"Type 'y' to continue calculating with {answer}. Type 'n' to start a new calculation: ")
+        repeat = input(f"Type 'y' to continue calculating with {answer}. Type 'n' to start a new calculation or 'q' to exit: ")
         if repeat == "y":
             num1 = answer
+        else:
+            terminate = True
+            os.system('cls')
+            calculator()
+
+calculator()
