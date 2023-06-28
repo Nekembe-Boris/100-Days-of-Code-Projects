@@ -14,3 +14,25 @@ def deal_card():
 
 
 user_cards, computer_cards = deal_card()
+
+blackjack = [ace, 10]
+
+
+def game():
+    player_score = sum(user_cards)
+    cpu_score = sum(computer_cards)
+
+    def blackjack_check():
+        if player_score == sum(blackjack) and cpu_score != sum(blackjack):
+            print("You won")
+            return 0
+        elif cpu_score == sum(blackjack) and player_score != blackjack:
+            print("You lose")
+            return 0
+        elif player_score == sum(blackjack) and cpu_score == sum(blackjack):
+            return "It's a draw"
+
+    push = blackjack_check()
+
+    print(f"    Your hand: {user_cards}, current score {sum(user_cards)}")
+    print(f"    Dealer's first card: [{computer_cards[0]}]")
