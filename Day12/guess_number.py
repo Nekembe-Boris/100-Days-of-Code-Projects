@@ -1,6 +1,8 @@
 import random
 from art import logo
+import os
 
+os.system('cls')
 print(logo)
 
 print("Welcome to the Number Guessing Game")
