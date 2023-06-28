@@ -90,8 +90,8 @@ def game():
             print(f"    Dealer's cards: {computer_cards}, final score {cpu_score}")
             print("There is a draw")
 
-        repeat = False
-    
+
+    repeat = False
 
     while repeat != True:
         replay = input("Do you want to play blackjack again? Type 'y' or 'n': ")
