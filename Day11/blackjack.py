@@ -20,6 +20,9 @@ blackjack = [ace, 10]
 
 
 def game():
+    os.system('cls')
+    print(logo)
+
     player_score = sum(user_cards)
     cpu_score = sum(computer_cards)
 
@@ -87,7 +90,22 @@ def game():
             print(f"    Dealer's cards: {computer_cards}, final score {cpu_score}")
             print("There is a draw")
 
-entry = input("Do you want to play blackjack? Type 'y' or 'no': ")
+        repeat = False
+    
+
+    while repeat != True:
+        replay = input("Do you want to play blackjack again? Type 'y' or 'n': ")
+
+        if replay == "y":
+            os.system('cls')
+            game()
+        else:
+            repeat = True
+            print("Goodbye")
+
+
+entry = input("Do you want to play blackjack? Type 'y' or 'n': ")
+
 if entry == "y":
     game()
 else:
