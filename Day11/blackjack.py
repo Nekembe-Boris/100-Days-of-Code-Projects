@@ -70,3 +70,25 @@ def game():
                     computer_cards.append(random.choice(cards))
                     cpu_score = sum(computer_cards)
             player_draw = True
+    
+    if player_score < 22 and cpu_score < 22:
+        if player_score < cpu_score:
+            print(f"    Your hand: {user_cards}, final score {player_score}")
+            print(f"    Dealer's cards: {computer_cards}, final score {cpu_score}")
+            print("You lose")
+        elif player_score > cpu_score:
+            print(f"    Your hand: {user_cards}, final score {player_score}")
+            print(f"    Dealer's cards: {computer_cards}, final score {cpu_score}")
+            print("You Win!!")
+        elif push == "It's a draw":
+            print("There is a draw")
+        else:
+            print(f"    Your hand: {user_cards}, final score {player_score}")
+            print(f"    Dealer's cards: {computer_cards}, final score {cpu_score}")
+            print("There is a draw")
+
+entry = input("Do you want to play blackjack? Type 'y' or 'no': ")
+if entry == "y":
+    game()
+else:
+    print("Goodbye!!")
