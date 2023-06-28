@@ -2,39 +2,34 @@ import random
 import os
 from art import logo
 
-
-cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
-ace = 11
-
-
-def deal_card():
-    for i in range(len(cards)):
-        u_serve = random.sample(cards, 2)
-        c_serve = random.sample(cards, 2)
-    return u_serve, c_serve
-
-
-user_cards, computer_cards = deal_card()
-
-blackjack = [ace, 10]
-
-
 def game():
+
     os.system('cls')
+
     print(logo)
+
+    cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+    ace = 11
+
+    def deal_card():
+        for i in range(len(cards)):
+            u_serve = random.sample(cards, 2)
+            c_serve = random.sample(cards, 2)
+        return u_serve, c_serve
+
+
+    user_cards, computer_cards = deal_card()
+
+    blackjack = [ace, 10]
 
     player_score = sum(user_cards)
     cpu_score = sum(computer_cards)
 
     def blackjack_check():
         if player_score == sum(blackjack) and cpu_score != sum(blackjack):
-            print("You won")
             return 0
         elif cpu_score == sum(blackjack) and player_score != blackjack:
-            print("You lose")
             return 0
-        elif player_score == sum(blackjack) and cpu_score == sum(blackjack):
-            return "It's a draw"
 
     push = blackjack_check()
 
@@ -48,65 +43,58 @@ def game():
         if ask == "y":
             user_cards.append(random.choice(cards))
             player_score = sum(user_cards)
-            print(f"    Your hand: {user_cards}, current score {player_score}")
-            print(f"    Dealer's first card: [{computer_cards[0]}]")
             if player_score > 21:
-                print(f"    Your hand: {user_cards}, final score {sum(user_cards)}")
-                print(f"    Dealer's cards: {computer_cards}, final score {cpu_score}")
-                print("You Lose. You went over")
                 player_draw = True
             if cpu_score < 17:
                 computer_cards.append(random.choice(cards))
                 cpu_score = sum(computer_cards)
             
         elif ask == "n":
-            if cpu_score < 17:
+            if cpu_score < 21:
                 computer_cards.append(random.choice(cards))
                 cpu_score = sum(computer_cards)
 
-                if cpu_score > 21:
-                    print(f"    Your hand: {user_cards}, final score {sum(user_cards)}")
-                    print(f"    Dealer's cards: {computer_cards}, final score {cpu_score}")
-                    print("You won, Computer went over!")
-                    player_draw = True
-                if cpu_score < 21:
-                    computer_cards.append(random.choice(cards))
-                    cpu_score = sum(computer_cards)
             player_draw = True
+            
     
-    if player_score < 22 and cpu_score < 22:
-        if player_score < cpu_score:
+    def compare_score(player_score, cpu_score):
+        if player_score == cpu_score:
             print(f"    Your hand: {user_cards}, final score {player_score}")
             print(f"    Dealer's cards: {computer_cards}, final score {cpu_score}")
-            print("You lose")
+            print("It's a Draw")
+        elif cpu_score == push:
+            print("You Lose. Dealer has a blackjack")
+            print("")
+        elif player_score == push:
+            print("You win. You got a Blackjack!!")
+        elif player_score > 21:
+            print(f"    Your hand: {user_cards}, final score {player_score}")
+            print(f"    Dealer's cards: {computer_cards}, final score {cpu_score}")
+            print("You Lose. You went over")
+        elif cpu_score > 21:
+            print(f"    Your hand: {user_cards}, final score {player_score}")
+            print(f"    Dealer's cards: {computer_cards}, final score {cpu_score}")
+            print("You Win. Dealer went over")
         elif player_score > cpu_score:
             print(f"    Your hand: {user_cards}, final score {player_score}")
             print(f"    Dealer's cards: {computer_cards}, final score {cpu_score}")
-            print("You Win!!")
-        elif push == "It's a draw":
-            print("There is a draw")
+            print("You Win.")
         else:
             print(f"    Your hand: {user_cards}, final score {player_score}")
             print(f"    Dealer's cards: {computer_cards}, final score {cpu_score}")
-            print("There is a draw")
+            print("You Lose.")
+
+    compare_score( player_score, cpu_score)
 
 
-    repeat = False
+repeat = False
+while repeat != True:
+    replay = input("Do you want to play blackjack? Type 'y' or 'n': ")
 
-    while repeat != True:
-        replay = input("Do you want to play blackjack again? Type 'y' or 'n': ")
-
-        if replay == "y":
-            os.system('cls')
-            game()
-        else:
-            repeat = True
-            print("Goodbye")
-
-
-entry = input("Do you want to play blackjack? Type 'y' or 'n': ")
-
-if entry == "y":
-    game()
-else:
-    print("Goodbye!!")
+    if replay == "y":
+        game()
+    else:
+        repeat = True
+        os.system('cls')
+        print(logo)
+        print("Goodbye")
