@@ -29,6 +29,7 @@ def game():
         if guess == random_num:
             print(f"You got it. The answer was {random_num}")
             game_over = True
+            break
         elif guess < random_num:
             lives -= 1
             print("You guessed too low")
