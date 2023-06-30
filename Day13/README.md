@@ -6,3 +6,4 @@
 - Squashing bugs with a print() Statement
 - Using a Debugger
 ## Exercises
+-[Exercise 2] (https://github.com/Nekembe-Boris/100-Days-of-Code-Projects/tree/main/Day13/Exercise%202)
