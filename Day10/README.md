@@ -6,4 +6,5 @@
 - Combining Dictionaries and Functions
 - Print vs. Return
 - While Loops, Flags and Recursion
-## Calculator
+## Project
+### Calculator
