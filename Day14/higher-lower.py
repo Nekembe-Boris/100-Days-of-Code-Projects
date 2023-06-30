@@ -1,6 +1,6 @@
 import os
 import random
-from art import logo
+from art import logo, vs
 from data import data
 
 
@@ -31,11 +31,16 @@ def higher_lower():
 
     entity_a = random.choice(data)
 
+    os.system('cls')
+    print(logo)
+
     while end_game != True:
 
-        os.system('cls')
+        entity_b = random.choice(data)
+        entity_c = random.choice(data)
 
-        entity_b = random. choice(data)
+        if entity_b == entity_a:
+            entity_b = entity_c
 
         compare = ["A", "B"]
         line_A = details(entity_a, compare[0])
@@ -44,18 +49,14 @@ def higher_lower():
         following_a = followers(entity_a)
         following_b = followers(entity_b)
 
-        #to delete
-        print(following_a)
-        print(following_b)
-
         if following_a > following_b:
             winner = "A"
         else:
             winner = "B"
 
-        print(winner)
-
         print(line_A)
+
+        print(vs)
 
         print(line_B)
 
@@ -63,8 +64,11 @@ def higher_lower():
         if winner == question:
             score += 1 
             entity_a = winning_entity(entity_a, entity_b)
+            os.system('cls')
+            print(logo)
+            print(f"You're right! Current score {score}")
         else:
-            print("Lose")
+            print(f"Sorry that's wrong. Final score {score}")
             end_game = True
 
 higher_lower()
