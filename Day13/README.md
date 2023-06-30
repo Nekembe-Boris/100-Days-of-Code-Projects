@@ -1,7 +1,8 @@
-# Instructions
-
-- Read this the code in main.py
-- Spot the problems 🐞.
-- Modify the code to fix the program.
-
-Fix the code so that it works and passes the tests when you submit.
+# Day 13 - Debugging: How to Find and Fix Errors in your Code
+## Concepts Practised
+- Describing the Problem
+- Reproducing the Bug
+- Playing Computer and Evaluating Each Line
+- Squashing bugs with a print() Statement
+- Using a Debugger
+## Exercises
