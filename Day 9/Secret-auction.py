@@ -1,6 +1,7 @@
 import os
 from art import logo
 
+os.system('cls')
 print(logo)
 print("Welcome to the secret Auction Program.")
 

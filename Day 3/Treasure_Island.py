@@ -47,26 +47,4 @@ if junction == "left":
         print("Ops!! When you chill with the sharks, You know what comes next. GAME OVER")
 else:
     print("Boom, You're lost at sea. GAME OVER")
-
-row1 = ["⬜️","️⬜️","️⬜️"]
-row2 = ["⬜️","⬜️","️⬜️"]
-row3 = ["⬜️️","⬜️️","⬜️️"]
-map = [row1, row2, row3]
-print(f"\n{row1}\n{row2}\n{row3}")
-
-print("\nHint( Enter a number from 0 - 33) : Your entry should be in double digit ex: 01, 00, 22")
-
-prompt = input("\nWhere do you want to hide the treasure you found? \n")
-
-int_prompt = int(prompt)
-
-if int_prompt > 33:
-    print("You are out of range!! Try again")
-else:
-    row = int(prompt[0])
-        
-    column = int(prompt[1])
-
-    map[column - 1][row - 1] = "X"
-
-    print(f"\n{row1}\n{row2}\n{row3}")
+    

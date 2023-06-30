@@ -69,6 +69,10 @@ def higher_lower():
             print(f"You're right! Current score {score}")
         else:
             print(f"Sorry that's wrong. Final score {score}")
-            end_game = True
+            repeat = input("Do you want to try again? Type 'y' or 'n': ")
+            if repeat == "y":
+                higher_lower()
+            else:
+                end_game = True
 
 higher_lower()
