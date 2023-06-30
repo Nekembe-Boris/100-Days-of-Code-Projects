@@ -3,4 +3,5 @@
 - Using Dictionary Data
 - Using Procedures
 - Using Conditional Statements
-## Higher Lower Game
+## Project
+### Higher Lower Game
