@@ -4,7 +4,7 @@
 So far, all project ideas came from the Udemy course: [100 Days of Code: The Complete Python Pro Bootcamp](https://www.udemy.com/course/100-days-of-code/)
 
 
-## 🔰 Beginner 
+## 🚥 Beginner 
 - [Day 1:](https://github.com/Nekembe-Boris/100-Days-of-Code-Projects/tree/main/Day%201) Working with Variables in Python to Manage Data
 - [Day 2:](https://github.com/Nekembe-Boris/100-Days-of-Code-Projects/tree/main/Day%202) Understanding Data Types and How to Manipulate Strings
 - [Day 3:](https://github.com/Nekembe-Boris/100-Days-of-Code-Projects/tree/main/Day%203) Control Flow and Logical Operators
