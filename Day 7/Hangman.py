@@ -1,5 +1,5 @@
 import random
-from
+from art import word_list, logo, stages
 
 random_word = random.choice(word_list)
 
