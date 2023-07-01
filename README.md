@@ -1,7 +1,7 @@
-<h1 align="center">100 Days of Code: The Complete Python Pro Bootcamp
+<h1 align="center">100 Days of Code: The Complete Python Pro Bootcamp 
 </h1>
 
-So far, all project ideas came from the Udemy course: [100 Days of Code: The Complete Python Pro Bootcamp](https://www.udemy.com/course/100-days-of-code/)
+So far, all project ideas came from the Udemy course: [100 Days of Code: The Complete Python Pro Bootcamp](https://www.udemy.com/course/100-days-of-code/) by Angela Yu
 
 
 ## 🚥 Beginner 
