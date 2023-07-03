@@ -6,6 +6,7 @@ from data import data
 
 def higher_lower():
 
+
     def details(celebrity, letter):
         """Gets the name, country and description of the selected entities"""
         story =""
@@ -16,6 +17,7 @@ def higher_lower():
         story = f"Compare {letter}: {name}, a {description} from {country}"
         return story
 
+
     def winning_entity(celebrity_a, celebrity_b):
         """This function returns the winner between the selected persons """
         if celebrity_a['follower_count'] > celebrity_b['follower_count']:
@@ -23,11 +25,13 @@ def higher_lower():
         else:
             return celebrity_b
 
+
     def followers(celebrity):
         """To get the number of instagram followers"""
         for _  in celebrity:
             follow = celebrity["follower_count"]
         return follow
+
 
     score = 0
     end_game = False
