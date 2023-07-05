@@ -34,3 +34,33 @@ resources = {
 }
 
 profit = 0
+
+def coffee():
+
+    os.system('cls')
+
+    def current_materials(needs):
+        """gets the ingredients of the order"""
+        for item in MENU:
+            if item == needs:
+                requirements = MENU[item]["ingredients"]
+        return requirements
+
+
+    def current_price (needs):
+        """gets the cost of the order"""
+        for item in MENU:
+            if item == needs:
+                cost = MENU[item]["cost"]
+        return cost
+
+    def sufficient_check(needs, available):
+        """Checks if the available resources are sufficient to produce the order"""
+        num = len(needs)
+        for item in needs:
+            if needs[item] <= available[item]:
+                num -= 1
+                if num == 0:
+                    return True
+            elif needs[item] > available[item]:
+                return item
