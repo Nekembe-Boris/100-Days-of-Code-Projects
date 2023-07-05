@@ -64,3 +64,56 @@ def coffee():
                     return True
             elif needs[item] > available[item]:
                 return item
+
+    turn_off = False
+    report = resources
+    report['Money'] = profit
+
+
+    while turn_off != True:
+
+        request = input("What would you like? (espresso/latte/cappuccino): ").lower()
+
+        if request == "report":
+            print(f"Water: {report['water']}ml \nMilk: {report['milk']}ml \nCoffee: {report['coffee']}ml \nMoney: ${report['Money']}")
+        elif request == 'off':
+            turn_off = True
+        elif request == 'espresso' or request == 'latte' or request == 'cappuccino':
+
+            order_materials = current_materials(request)
+
+            order_price = current_price(request)
+
+            stock = sufficient_check(order_materials, resources)
+
+
+            if stock == True:
+                print("Please insert coins.")
+                quarters = int(input("How many quarters?: ")) * 0.25
+                dimes = int(input("How many dimes?: ")) * 0.10
+                nickels = int(input("How many nickels?: ")) * 0.05
+                pennies = int(input("How many pennies?: ")) * 0.01
+
+                total_sum = round((quarters + dimes + nickels + pennies),2)
+            else:
+                print(f"Sorry, there is not enough {stock}")
+
+            if total_sum < order_price:
+                print("Sorry, that's not enough. Money refunded")
+            elif total_sum > order_price:
+                balance = round((total_sum - order_price), 2)
+
+            if total_sum >= order_price:
+                report["Money"] += order_price
+
+            if stock == True and total_sum >= order_price:
+                for items in order_materials:
+                    if items in resources:
+                        resources[items] -= order_materials[items]
+                if total_sum > order_price:
+                    print(f"Here is ${balance} in change")
+                print("Here is your coffee, Enjoy!")        
+        else:
+            print("Please, enter a valid order")
+
+coffee()
