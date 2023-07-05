@@ -112,7 +112,7 @@ def coffee():
                         resources[items] -= order_materials[items]
                 if total_sum > order_price:
                     print(f"Here is ${balance} in change")
-                print("Here is your coffee, Enjoy!")        
+                print("Here is your coffee ☕, Enjoy!")        
         else:
             print("Please, enter a valid order")
 
