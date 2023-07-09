@@ -26,6 +26,6 @@ while end_game != True:
         my_choice = menu.find_drink(request)
         if my_choice == None:
             print("Valid order needed!")
-        elif coffee_maker.is_resource_sufficient(my_choice) == True and money_machine.make_payment(my_choice.cost) == True:
-            coffee_maker.make_coffee(my_choice)
-        
+        elif coffee_maker.is_resource_sufficient(my_choice) == True:
+            if money_machine.make_payment(my_choice.cost) == True:
+                coffee_maker.make_coffee(my_choice)
