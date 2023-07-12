@@ -9,7 +9,6 @@ for item in question_data:
         QuestionModel(item["text"], item["answer"])
         )
 
-print(len(question_vault))
 
 quiz = QuizBrain(question_vault)
 
