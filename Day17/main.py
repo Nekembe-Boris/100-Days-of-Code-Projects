@@ -15,4 +15,7 @@ quiz = QuizBrain(question_vault)
 
 while quiz.questions_left() == True:
     quiz.next_question()
-    
+
+
+print("\nYou've completed the quiz")
+print(f"Your final score was {quiz.score}/{quiz.question_number}")
