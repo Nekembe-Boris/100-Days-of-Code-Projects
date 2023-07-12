@@ -1,5 +1,6 @@
 from data import question_data
 from question_model import QuestionModel
+from quiz_brain import QuizBrain
 
 question_vault = []
 
@@ -10,3 +11,8 @@ for item in question_data:
 
 print(len(question_vault))
 
+quiz = QuizBrain(question_vault)
+
+while quiz.questions_left() == True:
+    quiz.next_question()
+    
