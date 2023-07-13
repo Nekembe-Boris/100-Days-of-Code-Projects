@@ -2,8 +2,6 @@ import colorgram
 import turtle
 import random
 
-turtle.colormode(255)
-
 def random_colors():
     r = random.randint(0, 255)
     g = random.randint(0, 255)
