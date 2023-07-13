@@ -15,15 +15,15 @@ pen.hideturtle()
 pen.penup()
 pen.goto(-300, -200)
 
-
 new_line = 50
 
 
 for i in range(0, 10):
-    for lenght in range(0, 11):  
-        pen.pendown(); pen.dot(25, random.choice(color_list)); pen.hideturtle(); pen.penup(); pen.forward(50)
-        if lenght == 10:
-            pen.hideturtle()
+    for lenght in range(0, 10):
+
+        pen.dot(25, random.choice(color_list)); pen.forward(50)
+
+        if lenght == 9:
             pen.goto(-300, -200 + new_line)
             new_line += 50
 
