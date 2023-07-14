@@ -24,6 +24,8 @@ turtle.colormode(255)
 
 screen = turtle.Screen()
 screen.setup(height=600, width=700)
+
+
 user_bet = screen.textinput("Place a Bet", "Which turtle will win the race. Enter a color: ").lower()
 
 end_race = False
