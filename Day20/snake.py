@@ -2,6 +2,10 @@ import turtle
 
 START = [(0, 0), (-20, 0), (-40, 0)]
 DISTANCE = 20
+UP = 90
+DOWN = 270
+LEFT = 180
+RIGHT = 0
 
 class Snake:
 
@@ -27,13 +31,17 @@ class Snake:
 
 
     def right(self):
-        self.square_list[0].setheading(0)
+        if self.square_list[0].heading() != LEFT:
+            self.square_list[0].setheading(RIGHT)
 
     def up(self):
-        self.square_list[0].setheading(90)
+        if self.square_list[0].heading() != DOWN:
+            self.square_list[0].setheading(UP)
 
     def left(self):
-        self.square_list[0].setheading(180)
+        if self.square_list[0].heading() != RIGHT:
+            self.square_list[0].setheading(LEFT)
 
     def down(self):
-        self.square_list[0].setheading(270)
+        if self.square_list[0].heading() != UP:
+            self.square_list[0].setheading(DOWN)
