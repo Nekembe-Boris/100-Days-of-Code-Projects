@@ -38,3 +38,15 @@ while end_game != True:
         food.location()
         hit_ball = True
         score.score_check(hit_ball)
+        snakes.extend_snake()
+
+    if snakes.wall_collision() == True:
+        end_game = True
+        score.game_over()
+
+    for part in snakes.square_list:
+        if snakes.square_list[0].distance(snakes.square_list[-1]) < 10:
+            end_game = True
+            score.game_over()
+
+screen.exitonclick()

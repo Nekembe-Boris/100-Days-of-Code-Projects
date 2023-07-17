@@ -11,16 +11,25 @@ class Snake:
 
     def __init__(self):
         self.square_list = []
-        self.snake_blueprint()
+        self.create_snake()
 
 
-    def snake_blueprint(self):   
-        for i in range(3):
-            square = turtle.Turtle(shape=("square"))
-            square.penup()
-            square.color("white")
-            square.goto(START[i])
-            self.square_list.append(square)
+    def create_snake(self):
+        for position in (START):
+            self.snake_blueprint(position)
+
+
+    def snake_blueprint(self, position):   
+        square = turtle.Turtle(shape=("square"))
+        square.penup()
+        square.color("white")
+        square.goto(position)
+        self.square_list.append(square)
+
+
+
+    def extend_snake(self):
+        self.snake_blueprint(self.square_list[-1].position())
 
     def move(self):
         for i in range(len(self.square_list) - 1, 0, -1):
@@ -45,3 +54,12 @@ class Snake:
     def down(self):
         if self.square_list[0].heading() != UP:
             self.square_list[0].setheading(DOWN)
+
+    def wall_collision(self):
+        
+        positionx = self.square_list[0].xcor()
+        positiony = self.square_list[0].ycor()
+        if positionx < -295 or positionx > 295:
+            return True
+        elif positiony < -295 or positiony > 295:
+            return True
