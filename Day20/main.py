@@ -26,7 +26,7 @@ screen.onkey(snakes.left, "Left")
 
 
 end_game = False
-counter = 0
+
 
 while end_game != True:
     hit_ball = False
@@ -37,5 +37,4 @@ while end_game != True:
     if snakes.square_list[0].distance(food) < 15:
         food.location()
         hit_ball = True
-        counter += 1
-        score.score_check(hit_ball, counter)
+        score.score_check(hit_ball)
