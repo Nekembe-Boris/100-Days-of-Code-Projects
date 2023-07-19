@@ -4,7 +4,7 @@ START1 = [(-470, 0), (-470, 30), (-470, -30)]
 START2 = [(470, 0), (470, 30), (470, -30)]
 
 
-class Player1:
+class Paddle1:
     def __init__(self):
         self.list = []
         self.create_player()
@@ -25,7 +25,7 @@ class Player1:
         self.list.append(square)
 
 
-class Player2(Player1):
+class Paddle2(Paddle1):
     def __init__(self):
         super().__init__()
     
