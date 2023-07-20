@@ -11,23 +11,25 @@ my_screen.bgcolor("black")
 my_screen.tracer(0)
 
 
-player_1 = Paddle1()
-player_2 = Paddle2()
+paddle_1 = Paddle1()
+paddle_2 = Paddle2()
 net = Lines()
 ball = Ball()
 
+my_screen.update()
 
 my_screen.listen()
-my_screen.onkeypress(player_1.move_up, "Up")
-my_screen.onkeypress(player_1.move_down, "Down")
-my_screen.onkeypress(player_2.move_up, "a")
-my_screen.onkeypress(player_2.move_down, "s")
-
+my_screen.onkeypress(paddle_1.move_up, "w")
+my_screen.onkeypress(paddle_1.move_down, "s")
+my_screen.onkeypress(paddle_2.move_up, "Up")
+my_screen.onkeypress(paddle_2.move_down, "Down")
 
 end_game = False
 
 while end_game != True:
-    time.sleep(0.009)
     my_screen.update()
+    time.sleep(0.05)
+
+
 
 my_screen.mainloop()

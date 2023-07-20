@@ -1,6 +1,5 @@
 from turtle import Turtle
 
-
 class Lines:
     def __init__(self):
         self.create_net()
@@ -21,9 +20,23 @@ class Lines:
 
 
 class Ball(Turtle):
+
     def __init__(self):
         super().__init__()
         self.penup()
-        self.shape("square")
+        self.shape("circle")
         self.color("white")
-        self.shapesize(0.5, 0.5)
+        self.shapesize(0.9, 0.9)
+
+    def movement(self, turn):
+        self.setheading(turn)
+        self.forward(4)
+
+    def tilt(self):
+        if self.ycor() > 280:
+            self.tiltangle(45)
+            self.forward(4)
+        elif self.ycor() < -280:
+            self.tiltangle(90)
+            self.forward(4)
+
