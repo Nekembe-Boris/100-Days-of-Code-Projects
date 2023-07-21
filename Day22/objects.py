@@ -29,6 +29,7 @@ class Ball(Turtle):
         self.color("white")
         self.x_dir = 10
         self.y_dir = 10
+        self.inc_speed = 5
 
     def movement(self):
         positionx = self.xcor() + self.x_dir
@@ -39,9 +40,12 @@ class Ball(Turtle):
         self.y_dir *= -1
 
         
-    def bounce_rpaddle(self):
+    def bounce_paddle(self):
         self.x_dir *= -1
+        add = self.speed() * self.inc_speed
+        self.speed(add)
 
     def start_over(self, check):
         if check == True:
             self.goto(0, 0)
+            self.bounce_paddle()

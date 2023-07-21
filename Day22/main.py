@@ -16,8 +16,8 @@ paddle_l = Paddle1()
 paddle_r = Paddle2()
 net = Lines()
 ball = Ball()
-score_right = Score_l()
-score_left = Score_r()
+score_right = Score_r()
+score_left = Score_l()
 
 my_screen.update()
 
@@ -31,7 +31,7 @@ end_game = False
 
 while end_game != True:
 
-    time.sleep(0.1)
+    time.sleep(0.05)
     my_screen.update()
     ball.movement()
     check = False
@@ -40,15 +40,15 @@ while end_game != True:
         ball.bounce_wall()
 
     if ball.distance(paddle_r) < 50 and ball.xcor() > 350 or ball.distance(paddle_l) < 50 and ball.xcor() < -350:
-        ball.bounce_rpaddle()
+        ball.bounce_paddle()
 
-    if ball.xcor() > 400:
-        check = True
-        score_right.score_check(check)
-        ball.start_over(check)
-    elif ball.xcor() < -400:
+    if ball.xcor() > 390:
         check = True
         score_left.score_check(check)
+        ball.start_over(check)
+    elif ball.xcor() < -390:
+        check = True
+        score_right.score_check(check)
         ball.start_over(check)
 
 my_screen.exitonclick()
