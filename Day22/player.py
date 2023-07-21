@@ -3,8 +3,6 @@ from turtle import Turtle
 START1 = (-370, 0)
 START2 = (370, 0)
 DISTANCE = 30
-UP = 90
-DOWN = 270
 
 class Paddle(Turtle):
 
