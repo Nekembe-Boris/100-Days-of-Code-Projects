@@ -1,4 +1,5 @@
 from turtle import Turtle
+import random
 
 class Lines:
     def __init__(self):
@@ -26,17 +27,21 @@ class Ball(Turtle):
         self.penup()
         self.shape("circle")
         self.color("white")
-        self.shapesize(0.9, 0.9)
+        self.x_dir = 10
+        self.y_dir = 10
 
-    def movement(self, turn):
-        self.setheading(turn)
-        self.forward(4)
+    def movement(self):
+        positionx = self.xcor() + self.x_dir
+        positiony = self.ycor() + self.y_dir
+        self.goto(positionx, positiony)
 
-    def tilt(self):
-        if self.ycor() > 280:
-            self.tiltangle(45)
-            self.forward(4)
-        elif self.ycor() < -280:
-            self.tiltangle(90)
-            self.forward(4)
+    def bounce_wall(self): 
+        self.y_dir *= -1
 
+        
+    def bounce_rpaddle(self):
+        self.x_dir *= -1
+
+    def start_over(self, check):
+        if check == True:
+            self.goto(0, 0)

@@ -1,8 +1,8 @@
 from turtle import Turtle
 
-START1 = (-470, 0)
-START2 = (470, 0)
-DISTANCE = 20
+START1 = (-370, 0)
+START2 = (370, 0)
+DISTANCE = 30
 UP = 90
 DOWN = 270
 
@@ -13,7 +13,7 @@ class Paddle(Turtle):
         self.shape("square")
         self.penup()
         self.color("white")
-        self.shapesize(stretch_len=5, stretch_wid=1)
+        self.shapesize(stretch_wid=1, stretch_len=5)
         self.setheading(90)
 
     def move_up(self):
