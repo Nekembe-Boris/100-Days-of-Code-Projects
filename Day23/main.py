@@ -25,8 +25,6 @@ timer = 150
 
 while game_over != True:
 
-    print(game_over)
-
     time.sleep(speed)
     screen.update()
 
@@ -44,6 +42,8 @@ while game_over != True:
         player.restart()
         car.create_car()
         speed -= 0.05
+        if speed < 0:
+            speed += 0.15
     
     if timer == 0:
         print("yep")
@@ -59,5 +59,6 @@ while game_over != True:
             game_over = False
             screen.listen()
             screen.onkeypress(player.move_up, "Up")
+
 
 screen.exitonclick()

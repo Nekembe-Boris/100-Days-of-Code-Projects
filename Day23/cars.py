@@ -13,7 +13,7 @@ for i in range(0, 50):
     blue = random.randint(0, 255)
     color_list.append((red,green,blue))
 
-    x = random.randint(390, 2000)
+    x = random.randint(300, 2000)
     y = random.randint(-230, 250)
     position.append((x, y))
 
