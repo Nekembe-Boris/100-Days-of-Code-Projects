@@ -14,7 +14,7 @@ class Player(Turtle):
 
     def restart(self):
         self.goto(x=0, y=-280)
-        self.move_up()
+
 
     
 
@@ -40,4 +40,8 @@ class Level(Turtle):
             self.level += 1
             self.clear()
             self.write(arg=f"Level: {self.level}", move=False, align="center", font=("Courier", 15, "bold"))
-  
+    
+    def restart(self):
+        self.clear()
+        self.goto(x=-280, y=270)
+        self.write(arg=f"Level: {self.level}", move=False, align="center", font=("Courier", 15, "bold"))
