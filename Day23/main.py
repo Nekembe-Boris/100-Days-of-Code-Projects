@@ -21,14 +21,13 @@ speed = 0.15
 
 game_over = False
 
-timer = 180
+timer = 150
 
 while game_over != True:
 
 
     time.sleep(speed)
     screen.update()
-    check = False
 
     for i in range(len(car.car_list)):
         car.car_list[i].forward(10)
@@ -42,17 +41,24 @@ while game_over != True:
             game_over = True
 
     if player.ycor() >= 280:
-        check = True
-        level.level_up(check)
-        player.restart(check)
-        car.restart(check)
+        level.level_up()
+        player.restart()
+        car.create_car()
         speed -= 0.05
     
     if timer == 0:
         print("yep")
-        check = True
-        car.restart(check)
-        timer += 180
+        car.create_car()
+        timer += 150
+
+    if game_over == True:
+        replay = screen.textinput("PLAY AGAIN?", "Do you want to try again? 'y' or 'n'").lower()
+        if replay == 'y':
+            player.restart()
+            car.create_car()
+            level.clear()
+            game_over = False
+
 
 
 screen.exitonclick()

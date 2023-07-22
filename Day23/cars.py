@@ -7,14 +7,14 @@ turtle.colormode(255)
 color_list = []
 position = []
 
-for i in range(0, 80):
+for i in range(0, 50):
     red = random.randint(0, 255)
     green = random.randint(0, 255)
     blue = random.randint(0, 255)
     color_list.append((red,green,blue))
 
     x = random.randint(390, 2000)
-    y = random.randint(-250, 250)
+    y = random.randint(-230, 250)
     position.append((x, y))
 
 
@@ -40,7 +40,3 @@ class Cars():
     def create_car(self):
         for i in range(len(color_list)):
             self.car_model()
-
-    def restart(self, check):
-        for i in range(len(color_list)):
-         self.car_list[i].goto(random.choice(position))
