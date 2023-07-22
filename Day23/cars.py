@@ -33,6 +33,7 @@ class Cars():
         car.penup()
         car.color(random.choice(color_list))
         car.shapesize(stretch_wid=1, stretch_len=2)
+        car.setheading(180)
         car.goto(random.choice(position))
         self.car_list.append(car)
 
@@ -40,3 +41,6 @@ class Cars():
         for i in range(len(color_list)):
             self.car_model()
 
+    def restart(self, check):
+        for i in range(len(color_list)):
+         self.car_list[i].goto(random.choice(position))
