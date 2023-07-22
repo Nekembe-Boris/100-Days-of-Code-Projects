@@ -25,6 +25,7 @@ timer = 150
 
 while game_over != True:
 
+    print(game_over)
 
     time.sleep(speed)
     screen.update()
@@ -32,8 +33,6 @@ while game_over != True:
     for i in range(len(car.car_list)):
         car.car_list[i].forward(10)
     timer -= 1
-
-    print(timer)
 
     for i in range(len(car.car_list)):
         if player.distance(car.car_list[i]) < 15:
@@ -58,7 +57,7 @@ while game_over != True:
             car.create_car()
             level.clear()
             game_over = False
-
-
+            screen.listen()
+            screen.onkeypress(player.move_up, "Up")
 
 screen.exitonclick()
