@@ -31,7 +31,6 @@ class Level(Turtle):
 
 
     def game_over(self):
-        self.color("black")
         self.goto(0, 0)
         self.write(arg="GAME OVER", move=False, align="center", font=("Courier", 15, "bold"))
 
