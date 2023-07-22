@@ -17,7 +17,7 @@ level = Level()
 screen.listen()
 screen.onkeypress(player.move_up, "Up")
 
-distance = 10
+car_speed = 10
 
 game_over = False
 
@@ -29,19 +29,18 @@ while game_over != True:
     screen.update()
 
     for i in range(len(car.car_list)):
-        car.car_list[i].forward(distance)
+        car.car_list[i].forward(car_speed)
     timer -= 1
 
     for i in range(len(car.car_list)):
-        if player.distance(car.car_list[i]) < 15:
+        if player.distance(car.car_list[i]) < 20:
             level.game_over()
             game_over = True
 
     if player.ycor() >= 280:
         level.level_up()
         player.restart()
-        car.create_car()
-        distance += 5
+        car_speed += 5
     
     if timer == 0:
         car.create_car()
@@ -56,7 +55,7 @@ while game_over != True:
             game_over = False
             screen.listen()
             screen.onkeypress(player.move_up, "Up")
-        elif replay == 'n':
+        else:
             screen.exitonclick()
 
 

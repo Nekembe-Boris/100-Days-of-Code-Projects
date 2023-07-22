@@ -18,9 +18,6 @@ for i in range(0, 50):
     position.append((x, y))
 
 
-print(color_list)
-print(position)
-
 
 class Cars():
     def __init__(self):
