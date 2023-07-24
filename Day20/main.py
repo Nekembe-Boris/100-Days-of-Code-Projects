@@ -41,12 +41,12 @@ while end_game != True:
         snakes.extend_snake()
 
     if snakes.wall_collision() == True:
-        end_game = True
-        score.game_over()
+        score.restart()
+        snakes.restart_snake()
 
     for segment in snakes.square_list[1:]:
         if snakes.square_list[0].distance(segment) < 10:
-            end_game = True
-            score.game_over()
+            score.restart()
+            snakes.restart_snake()
 
 screen.exitonclick()

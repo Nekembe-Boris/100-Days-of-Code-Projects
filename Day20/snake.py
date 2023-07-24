@@ -27,7 +27,6 @@ class Snake:
         self.square_list.append(square)
 
 
-
     def extend_snake(self):
         self.snake_blueprint(self.square_list[-1].position())
 
@@ -37,6 +36,13 @@ class Snake:
             positiony = self.square_list[i-1].ycor()
             self.square_list[i].goto(positionx, positiony)  
         self.square_list[0].forward(DISTANCE)
+
+
+    def restart_snake(self):
+        for i in range(len(self.square_list)):
+            self.square_list[i].goto(1000, 1000)
+        self.square_list.clear()
+        self.create_snake()
 
 
     def right(self):
@@ -56,7 +62,6 @@ class Snake:
             self.square_list[0].setheading(DOWN)
 
     def wall_collision(self):
-        
         positionx = self.square_list[0].xcor()
         positiony = self.square_list[0].ycor()
         if positionx < -295 or positionx > 295:
