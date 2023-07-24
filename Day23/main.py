@@ -1,7 +1,6 @@
 from turtle import Screen
 from cars import Cars
 from player import Player, Level
-import random
 import time
 
 
@@ -49,10 +48,10 @@ while game_over != True:
     if game_over == True:
         replay = screen.textinput("PLAY AGAIN?", "Do you want to try again? 'Y' or 'N'").lower()
         if replay == 'y':
+            game_over = False
             player.restart()
             car.create_car()
             level.restart()
-            game_over = False
             screen.listen()
             screen.onkeypress(player.move_up, "Up")
         else:

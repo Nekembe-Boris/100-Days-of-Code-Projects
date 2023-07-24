@@ -8,6 +8,7 @@ color_list = []
 position = []
 
 for i in range(0, 50):
+    """Generating random colors and positions that will be used by the cars"""
     red = random.randint(0, 255)
     green = random.randint(0, 255)
     blue = random.randint(0, 255)
@@ -25,6 +26,7 @@ class Cars():
         self.create_car()
         
     def car_model(self):
+        """Creating a single car model and assigning the various properties"""
         car = turtle.Turtle()
         car.shape("square")
         car.penup()
@@ -35,5 +37,6 @@ class Cars():
         self.car_list.append(car)
 
     def create_car(self):
+        """Creates the cars used by the game"""
         for i in range(len(color_list)):
             self.car_model()
