@@ -52,6 +52,6 @@ learn_dict = {
 }
 
 data_f = pandas.DataFrame(learn_dict)
-data_f.to_csv("States to learn.txt")
+data_f.to_csv("States_to_learn.csv")
 
 screen.exitonclick()
