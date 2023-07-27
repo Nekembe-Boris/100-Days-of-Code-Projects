@@ -13,7 +13,7 @@ states = data.state
 total_states = len(states)
 score = 0
 guessed_states = []
-missed_states = []
+
 
 def locate(name, pos_x, pos_y):
     """This function creates a new turtle, gets the name of the state and sends it to its corresponding x and y cooordinates"""
@@ -42,9 +42,7 @@ while end != True:
             locate(answer_state, x_coor, y_coor)
 
     if answer_state == "Exit":
-        for state in states:
-            if state not in guessed_states:
-                missed_states.append(state)
+        missed_states = [state_name for state_name in data.state if state_name != guessed_states]
         end = True
 
 learn_dict = {
@@ -55,3 +53,4 @@ data_f = pandas.DataFrame(learn_dict)
 data_f.to_csv("States_to_learn.csv")
 
 screen.exitonclick()
+
