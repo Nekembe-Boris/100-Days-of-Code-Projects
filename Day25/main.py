@@ -42,7 +42,7 @@ while end != True:
             locate(answer_state, x_coor, y_coor)
 
     if answer_state == "Exit":
-        missed_states = [state_name for state_name in states if state_name != guessed_states]
+        missed_states = [state_name for state_name in states if state_name not in guessed_states]
         end = True
 
 learn_dict = {
