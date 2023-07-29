@@ -37,7 +37,7 @@ while end_game != True:
             if random_word[i] == user_guess:
                 display[i] = user_guess
 
-    #forming a placeholder for all the corret guesses and printing them out
+    #forming a placeholder for all the correct guesses and printing them out
     main_placeholder = ""
     for n in range(0, len(display)):
         all_dash = display[n]

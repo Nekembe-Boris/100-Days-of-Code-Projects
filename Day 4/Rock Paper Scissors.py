@@ -5,6 +5,7 @@ game_list =[rock, paper, scissors]
 
 choice = int(input("\nWhat do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors. \n"))
 
+# line 9 ensures that the user input is not more than 2
 if choice < 0 or choice > 2:
     print("You entered a wrong number. Please enter a valid number")
 else:

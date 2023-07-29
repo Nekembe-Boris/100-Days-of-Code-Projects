@@ -64,13 +64,3 @@ while repeat:
   if replay == "no":
     repeat = False
     print("Goodbye")
-
-
-  #     end_text = ""
-  # for char in text:
-  #   if char in alphabet:
-  #     position = alphabet.index(char) + shift
-  #     end_text += alphabet[position]
-  #   else:
-  #     end_text += char
-  # print(end_text)
