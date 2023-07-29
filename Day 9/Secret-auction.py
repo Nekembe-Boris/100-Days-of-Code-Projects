@@ -5,33 +5,27 @@ os.system('cls')
 print(logo)
 print("Welcome to the secret Auction Program.")
 
-bidder_name = input("What is your name?: ")
-bid_amount = int(input("What is your bid?: $"))
 bidders = []
 
-replay = True
+continue_bid = True
 
-bidders.append(
-        {
-         bidder_name: bid_amount
-        },
-    )
+while continue_bid != False:
 
-repeat = input('Are there any other bidders? Type "yes" or "no": ')
-
-while replay != False:
-  if repeat == "yes":
-    os.system('cls')
-    bidder_name = input("What is your name?: ")
-    bid_amount = int(input("What is your bid?: $"))
-    bidders.append(
+  bidder_name = input("What is your name?: ").title()
+  bid_amount = int(input("What is your bid?: $"))
+  bidders.append(
           {
           bidder_name: bid_amount
-          },
+          }
       )
-    repeat = input('Are there any other bidders? Type "yes" or "no": ')
+  
+  repeat = input('Are there any other bidders? Type "yes" or "no": ')
+
+  if repeat == "yes":
+    os.system('cls')
+
   elif repeat == "no":
-    replay = False
+    continue_bid = False
 
 os.system('cls')
 

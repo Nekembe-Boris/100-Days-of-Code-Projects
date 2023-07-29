@@ -54,7 +54,7 @@ while repeat:
   text = input("Type your message:\n").lower()
   shift = int(input("Type the shift number:\n"))
 
-  if shift > 37:
+  if shift > 37: #rectifies the situation where a large shift value is used
     shift = shift % len(alphabet)
 
   ceasar(direction, text, shift)
