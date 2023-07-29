@@ -1,7 +1,7 @@
 from art import logo
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
-def ceasar(action, character, code):
+def ceasar(action, plain_text, code):
   
   cipher = 0
   new_message = ""
@@ -9,36 +9,36 @@ def ceasar(action, character, code):
 
   if action == "encode":
     
-    for i in range(len(character)):
-      letter = character[i]
+    for letter in plain_text:  #looping through the text the user entered
 
-      for letter_number in range(len(alphabet)):
+      for letter_index in range(len(alphabet)): #looping through the alphabet list
 
-        if letter == alphabet[letter_number]:
-          cipher = letter_number + code
+        if letter == alphabet[letter_index]:
+          cipher = letter_index + code
 
-          if cipher > letter_number:
+          if cipher > letter_index: #starts counting from the last item on the list to avoid range errors especially for letters at the near end of the list.
               excess = cipher - len(alphabet)
-              crypted = alphabet[excess]
-              new_message += crypted
+              new_message += alphabet[excess]
           else:
-            crypted = alphabet[cipher]
-            new_message += crypted     
-  
+            new_message += alphabet[cipher]     
+
+      if letter not in alphabet: # this line ensures that the position of non-alphabetic characters are maintained
+        new_message += letter
     print(f"The encoded text is {new_message}")
 
   elif action == "decode":
   
-    for i in range(len(character)):
-      new_letter = character[i]
+    for letter in plain_text: #same function as line 12
 
-      for letter_number in range(len(alphabet)):
+      for letter_index in range(len(alphabet)): #same function as line 14
 
-        if new_letter == alphabet[letter_number]:
-          cipher = letter_number - code
+        if letter == alphabet[letter_index]:
+          cipher = letter_index - code
           original_message += alphabet[cipher]
-            
-    print(f"The original text is {original_message}")
+
+      if letter not in alphabet: #same funtion as line 25
+        original_message += letter      
+    print(f"The original text is: {original_message}")
 
   else:
     print("Your action does not match any function of the program")   
