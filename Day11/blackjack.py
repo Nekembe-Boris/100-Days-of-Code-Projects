@@ -26,6 +26,8 @@ def game():
     cpu_score = sum(computer_cards)
 
     def blackjack_check():
+        """This function checks the presence of a blackjack and returns 0 if yes"""
+
         if player_score == sum(blackjack) and cpu_score != sum(blackjack):
             return 0
         elif cpu_score == sum(blackjack) and player_score != blackjack:
@@ -58,6 +60,7 @@ def game():
             
     
     def compare_score(player_score, cpu_score):
+        """This function takes the sum of cards and based on the coditions given, if prints out he winner"""
         if player_score == cpu_score:
             print(f"    Your hand: {user_cards}, final score {player_score}")
             print(f"    Dealer's cards: {computer_cards}, final score {cpu_score}")
