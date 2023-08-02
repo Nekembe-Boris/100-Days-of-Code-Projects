@@ -21,6 +21,7 @@ while end_game != True:
         money_machine.report()
     elif request == "off": 
         print("Switching off....")
+        print("Have a good one!")
         end_game = True
     else:
         my_choice = menu.find_drink(request)
