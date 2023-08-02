@@ -7,36 +7,25 @@ from data import data
 def higher_lower():
 
 
-    def details(celebrity, letter):
-        """Gets the name, country and description of the selected entities"""
-        story =""
-        for _ in celebrity:
-            name = celebrity["name"]
-            description = celebrity["description"]
-            country = celebrity["country"]
-        story = f"Compare {letter}: {name}, a {description} from {country}"
-        return story
-
-
-    def winning_entity(celebrity_a, celebrity_b):
+    def highest_followers(person_a, person_b):
+        """To get the number of instagram followers and returns A or B to compare with the user guess"""
+        if person_a > person_b:
+            return "A"
+        elif person_b > person_a:
+            return "B"
+    
+    def winning_celeb (celeb_a, celeb_b):
         """This function returns the winner between the selected persons """
-        if celebrity_a['follower_count'] > celebrity_b['follower_count']:
-            return celebrity_a
-        else:
-            return celebrity_b
+        if celeb_a["follower_count"] > celeb_b["follower_count"]:
+            return celeb_a
+        elif celeb_b["follower_count"] > celeb_a["follower_count"]:
+            return celeb_b
 
-
-    def followers(celebrity):
-        """To get the number of instagram followers"""
-        for _  in celebrity:
-            follow = celebrity["follower_count"]
-        return follow
-
-
-    score = 0
-    end_game = False
 
     entity_a = random.choice(data)
+    score = 0
+
+    end_game = False
 
     os.system('cls')
     print(logo)
@@ -44,33 +33,27 @@ def higher_lower():
     while end_game != True:
 
         entity_b = random.choice(data)
-        entity_c = random.choice(data)
 
-        if entity_b == entity_a:
-            entity_b = entity_c
+        if entity_a == entity_b:
+            entity_b = random.choice(data)
 
-        compare = ["A", "B"]
-        line_A = details(entity_a, compare[0])
-        line_B = details(entity_b, compare[1])
+        follower_a = entity_a['follower_count']
+        follower_b = entity_b['follower_count']
 
-        following_a = followers(entity_a)
-        following_b = followers(entity_b)
-
-        if following_a > following_b:
-            winner = "A"
-        else:
-            winner = "B"
-
-        print(line_A)
+        print("COMPARE:")
+        print(f"\nA: {entity_a['name']} a {entity_a['description']} from {entity_a['country']}")
 
         print(vs)
 
-        print(line_B)
+        print(f"B: {entity_b['name']} a {entity_b['description']} from {entity_b['country']}")
 
-        question = input("Who has more followers? Type 'A' or 'B': ").capitalize()
-        if winner == question:
+        guess = input("\nWho has more followers? Type 'A' or 'B': ").capitalize()
+
+        real_winner = highest_followers(follower_a, follower_b)
+
+        if guess == real_winner:
             score += 1 
-            entity_a = winning_entity(entity_a, entity_b)
+            entity_a = winning_celeb(entity_a, entity_b)
             os.system('cls')
             print(logo)
             print(f"You're right! Current score {score}")
