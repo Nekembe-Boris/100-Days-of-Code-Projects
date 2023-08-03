@@ -36,7 +36,7 @@ while end_race != True:
 
         position = round(object.xcor())
 
-        if position > 350:
+        if position > 355:
             end_race = True
             if user_bet == object.color()[0]:
                 declare_winner.write(arg=f"You WON the bet. The {object.color()[0]} turtle won", move=True, align = 'center', font = ('Courier', 15, 'bold'))
