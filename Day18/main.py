@@ -41,7 +41,6 @@ for dot in range(10):
     for i in range(10):
         dots(pen)
         
-    
     y_start += 50 
 
 screen = turtle.Screen()
