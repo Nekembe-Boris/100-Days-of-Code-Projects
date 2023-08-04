@@ -1,5 +1,4 @@
 import turtle
-import os
 import random
 
 colors = ["red", "blue", "green", "yellow", "black", "brown"]
