@@ -32,7 +32,7 @@ while end_race != True:
 
     for object in racer_list:
 
-        object.forward(random.randint(0, 4))
+        object.forward(random.randint(1, 4))
 
         position = round(object.xcor())
 
