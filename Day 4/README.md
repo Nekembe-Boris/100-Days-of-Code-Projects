@@ -5,3 +5,4 @@
 - Index Errors and Working with Nested Lists
 ## Project
 ### Rock Paper Scissors
+![Day4](https://github.com/Nekembe-Boris/user-content/blob/main/100_days_gifs/day4.gif)

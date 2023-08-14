@@ -4,3 +4,4 @@
 - Nesting Lists and Dictionaries
 ## Project
 ### The Secret Auction Program
+![Day9](https://github.com/Nekembe-Boris/user-content/blob/main/100_days_gifs/day_9.gif)

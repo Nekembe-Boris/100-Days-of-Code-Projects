@@ -8,4 +8,4 @@
 - Variable Naming
 ## Project
 ### Band Name Generator
-
+![Day1](https://github.com/Nekembe-Boris/user-content/blob/main/100_days_gifs/day_1.gif)

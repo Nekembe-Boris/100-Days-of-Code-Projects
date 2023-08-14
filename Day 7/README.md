@@ -6,3 +6,4 @@
 -  How to Add ASCII Art and Improve the UI
 ## Project
 ### Hangman
+![Day7](https://github.com/Nekembe-Boris/user-content/blob/main/100_days_gifs/day_7.gif)
