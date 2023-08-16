@@ -1,9 +1,13 @@
 from tkinter import *
 from tkinter import messagebox
+from password_generator import p_generator
 
 FONT_NAME = "Courier"
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
+def auto_gen():
+    auto_password = p_generator()
+    password_entry.insert(END, string=f"{auto_password}")
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 def save_details():
@@ -11,18 +15,24 @@ def save_details():
     website = website_entry.get()
     email = email_entry.get()
     password = password_entry.get()
-    
-    confirm = messagebox.askyesno(
-        message=f"Are you sure you want to save this password?\nWebsite: {website}\nEmail: {email}\nPassword: {password}",
-        icon = "question",
-        title="Confim password"
-    )
 
-    if confirm == True:
-        with open("Pass_store.txt", "a") as file:
-            file.write(f"{website} | {email} | {password}\n")
-            website_entry.delete(0, END)
-            password_entry.delete(0, END)
+    if len(website) < 1 or len(email) < 1 or len(password) < 1:
+        messagebox.showinfo(
+            title="Error",
+            message="Please ensure your no field is empty"
+            )
+    else:
+        confirm = messagebox.askyesno(
+            message=f"Are you sure the following details are correct?\nWebsite: {website}\nEmail: {email}\nPassword: {password}",
+            icon = "question",
+            title="Confrim details"
+        )
+
+        if confirm == True:
+            with open("Pass_store.txt", "a") as file:
+                file.write(f"{website} | {email} | {password}\n")
+                website_entry.delete(0, END)
+                password_entry.delete(0, END)
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
 window.title("Password Manager")
@@ -57,7 +67,7 @@ password_entry = Entry(width=34)
 password_entry.grid(column=1, row=3)
 
 
-generate_button = Button(text="Generate Password", font=(FONT_NAME, 10, "bold"))
+generate_button = Button(text="Generate Password", font=(FONT_NAME, 10, "bold"), command=auto_gen)
 generate_button.grid(column=2, row=3)
 
 add_button = Button(text="Add", font=(FONT_NAME, 10, "bold"), width=45, command=save_details)
