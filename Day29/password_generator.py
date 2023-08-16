@@ -12,25 +12,18 @@ def p_generator():
     numeric = random.randint(2, 4)
     character = random.randint(2, 4)
 
-    total = alphabet + numeric + character
-
-    gen_letters = ""
-    gen_numbers = ""
-    gen_symbols = ""
-
-    for n in range(0, total):
-        gen_letters = random.sample(letters, alphabet)
-        gen_numbers = random.sample(numbers, numeric)
-        gen_symbols = random.sample(symbols, character)
-
+    gen_letters = [random.choice(letters) for char in range(alphabet)]
+    gen_numbers = [random.choice(numbers) for char in range(numeric)]
+    gen_symbols = [random.choice(symbols) for char in range(character)]
 
     final = gen_letters + gen_numbers + gen_symbols
 
-
     password = ""
 
-    for i in range(0, len(final)):
-        generator = random.choice(final)
-        password = generator + password
+    for i in range(len(final)):
+        password += random.choice(final)
 
     return password
+
+
+p_generator()
