@@ -4,13 +4,16 @@ from password_generator import p_generator
 
 FONT_NAME = "Courier"
 
-# ---------------------------- PASSWORD GENERATOR ------------------------------- #
+
 def auto_gen():
+    """Prints the auto generated password to the password entry placeholder"""
+
     auto_password = p_generator()
     password_entry.insert(END, string=f"{auto_password}")
 
-# ---------------------------- SAVE PASSWORD ------------------------------- #
+
 def save_details():
+    """Checks if all fields are complete, ask the user if the submitted details are correct and finally appends the details to the 'Pass_store' file"""
 
     website = website_entry.get()
     email = email_entry.get()
@@ -33,7 +36,8 @@ def save_details():
                 file.write(f"{website} | {email} | {password}\n")
                 website_entry.delete(0, END)
                 password_entry.delete(0, END)
-# ---------------------------- UI SETUP ------------------------------- #
+
+
 window = Tk()
 window.title("Password Manager")
 window.config(padx=40, pady=40)
