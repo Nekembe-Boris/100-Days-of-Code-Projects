@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import messagebox
 
 FONT_NAME = "Courier"
 
@@ -7,10 +8,21 @@ FONT_NAME = "Courier"
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 def save_details():
 
-    with open("Pass_store.txt", "a") as file:
-        file.write(f"{website_entry.get()} | {email_entry.get()} | {password_entry.get()}")
-        website_entry.delete(0, END)
-        password_entry.delete(0, END)
+    website = website_entry.get()
+    email = email_entry.get()
+    password = password_entry.get()
+    
+    confirm = messagebox.askyesno(
+        message=f"Are you sure you want to save this password?\nWebsite: {website}\nEmail: {email}\nPassword: {password}",
+        icon = "question",
+        title="Confim password"
+    )
+
+    if confirm == True:
+        with open("Pass_store.txt", "a") as file:
+            file.write(f"{website} | {email} | {password}\n")
+            website_entry.delete(0, END)
+            password_entry.delete(0, END)
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
 window.title("Password Manager")
@@ -50,7 +62,6 @@ generate_button.grid(column=2, row=3)
 
 add_button = Button(text="Add", font=(FONT_NAME, 10, "bold"), width=45, command=save_details)
 add_button.grid(column=1, row=4, columnspan=2)
-
 
 
 
