@@ -18,12 +18,7 @@ def p_generator():
 
     final = gen_letters + gen_numbers + gen_symbols
 
-    password = ""
-
-    for i in range(len(final)):
-        password += random.choice(final)
+    password = "".join(final)
 
     return password
 
-
-p_generator()
