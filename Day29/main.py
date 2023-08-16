@@ -19,10 +19,11 @@ def save_details():
     email = email_entry.get()
     password = password_entry.get()
 
+
     if len(website) < 1 or len(email) < 1 or len(password) < 1:
         messagebox.showinfo(
             title="Error",
-            message="Please ensure your no field is empty"
+            message="Please ensure that there is no empty field"
             )
     else:
         confirm = messagebox.askyesno(
@@ -76,11 +77,6 @@ generate_button.grid(column=2, row=3)
 
 add_button = Button(text="Add", font=(FONT_NAME, 10, "bold"), width=45, command=save_details)
 add_button.grid(column=1, row=4, columnspan=2)
-
-
-
-
-
 
 
 window.mainloop()
