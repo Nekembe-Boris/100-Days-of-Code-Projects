@@ -18,7 +18,7 @@ def auto_gen():
 def save_details():
     """Checks if all fields are complete, ask the user if the submitted details are correct and finally appends the details to the 'Pass_store' file"""
 
-    website = website_entry.get()
+    website = website_entry.get().title()
     email = email_entry.get()
     password = password_entry.get()
 
@@ -28,19 +28,44 @@ def save_details():
             "Password": password
         }
     }
-                
-
-
+    
     if len(website) < 1 or len(password) < 1:
         messagebox.showinfo(
             title="Error",
             message="Please ensure that there is no empty field"
             )
     else:
-        with open("Pass_store.json", "w") as file:
-            json.dump(new_data, file)
-            website_entry.delete(0, END)
-            password_entry.delete(0, END)
+        confirm = messagebox.askyesno(
+        message=f"Are you sure the following details are correct?\nWebsite: {website}\nEmail: {email}\nPassword: {password}",
+        icon = "question",
+        title="Confrim details"
+            )
+
+        if confirm == True:
+            with open("Pass_store.json", "w") as file:
+                json.dump(new_data, file, indent=4)
+                website_entry.delete(0, END)
+                password_entry.delete(0, END)
+
+def search_data():
+    
+    website = website_entry.get().title()
+
+    try:
+        with open("Pass_store.json", "r") as file:
+            info = json.load(file)
+
+    except FileNotFoundError:
+            messagebox.showinfo(
+
+                title="No File",
+                message="Please ensure there is a pre-existing file before searching"
+            )
+    else:
+        for i in info:
+            if i == website:
+                password_entry.insert(END, string=f"{info[website]['Password']}")
+
 
 
 window = Tk()
@@ -63,13 +88,16 @@ email_label.grid(column=0, row=2)
 password_label = Label(text="Password: ", font=(FONT_NAME, 15, "bold"))
 password_label.grid(column=0, row=3)
 
-website_entry = Entry(width=60)
+website_entry = Entry(width=35)
 #the focus() method causes the cursor to automatically start here
 website_entry.focus()
-website_entry.grid(column=1, row=1, columnspan=2)
+website_entry.grid(column=1, row=1)
+
+search_button = Button(text="Search", font=(FONT_NAME, 10, "bold"), width=15, command=search_data)
+search_button.grid(column=2, row=1)
 
 email_entry = Entry(width=60)
-email_entry.insert(END, string=("nekembeb@gmail.com"))
+email_entry.insert(END, string=("boris@email.com"))
 email_entry.grid(column=1, row=2, columnspan=2)
 
 password_entry = Entry(width=34)
