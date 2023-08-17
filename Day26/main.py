@@ -8,7 +8,7 @@ for (index, row) in phonetic_data.iterrows():
 
 valid = False
 
-while valid != True:
+def code_name():
 
     word = input("Enter a word: ").upper()
 
@@ -16,6 +16,8 @@ while valid != True:
         coded_word = [new_dict[letter] for letter in word]
     except KeyError:
         print("Please enter only letters of the alphabet")
+        code_name()
     else:
         print(coded_word)
-        valid = True
+
+code_name()
