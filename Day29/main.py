@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
 from password_generator import p_generator
+import pyperclip
 
 FONT_NAME = "Courier"
 
@@ -10,6 +11,7 @@ def auto_gen():
 
     auto_password = p_generator()
     password_entry.insert(END, string=f"{auto_password}")
+    pyperclip.copy(auto_password)
 
 
 def save_details():
