@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter import messagebox
 from password_generator import p_generator
 import json
+import os
 import pyperclip
 
 FONT_NAME = "Courier"
@@ -42,8 +43,17 @@ def save_details():
             )
 
         if confirm == True:
-            with open("Pass_store.json", "w") as file:
-                json.dump(new_data, file, indent=4)
+            try:
+                with open("Pass_store.json", "r") as file:
+                    info = json.load(file)
+            except FileNotFoundError:
+                with open("Pass_store.json", "w") as file:
+                    json.dump(new_data, file, indent=4)   
+            else:
+                info.update(new_data)
+                with open("Pass_store.json", "w") as file:
+                    json.dump(info, file, indent=4)
+            finally:
                 website_entry.delete(0, END)
                 password_entry.delete(0, END)
 
@@ -59,7 +69,7 @@ def search_data():
             messagebox.showinfo(
 
                 title="No File",
-                message="Please ensure there is a pre-existing file before searching"
+                message="You do not have any previously store password"
             )
     else:
         for i in info:
