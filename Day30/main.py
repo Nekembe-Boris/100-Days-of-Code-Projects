@@ -73,12 +73,15 @@ def search_password():
                 message="You do not have any previously stored password"
             )
     else:
-        for i in info:
-            if i == website:
-                messagebox.showinfo(
-
-                title=f"{website}",
-                message=f"Email : {info[website]['Email']}\nPassword : {info[website]['Password']}"
+        if website in info:
+            messagebox.showinfo(
+            title=f"{website}",
+            message=f"Email : {info[website]['Email']}\nPassword : {info[website]['Password']}"
+            )
+        else:
+            messagebox.showinfo(
+            title="Password does not exit",
+            message=f"No password has been stored for the {website} website"
             )
 
 
