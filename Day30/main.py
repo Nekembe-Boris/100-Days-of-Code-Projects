@@ -58,7 +58,8 @@ def save_details():
                 password_entry.delete(0, END)
 
 def search_data():
-    
+    """searches and prints password using the name of the website and also alerts if no password has been stored"""
+
     website = website_entry.get().title()
 
     try:
@@ -99,7 +100,6 @@ password_label = Label(text="Password: ", font=(FONT_NAME, 15, "bold"))
 password_label.grid(column=0, row=3)
 
 website_entry = Entry(width=35)
-#the focus() method causes the cursor to automatically start here
 website_entry.focus()
 website_entry.grid(column=1, row=1)
 
