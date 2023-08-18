@@ -70,7 +70,7 @@ def search_data():
             messagebox.showinfo(
 
                 title="No File",
-                message="You do not have any previously store password"
+                message="You do not have any previously stored password"
             )
     else:
         for i in info:
