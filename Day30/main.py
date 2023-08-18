@@ -75,8 +75,11 @@ def search_data():
     else:
         for i in info:
             if i == website:
-                password_entry.insert(END, string=f"{info[website]['Password']}")
+                messagebox.showinfo(
 
+                title=f"{website}",
+                message=f"Email : {info[website]['Email']}\nPassword : {info[website]['Password']}"
+            )
 
 
 window = Tk()
