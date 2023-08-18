@@ -17,7 +17,7 @@ def auto_gen():
 def save_details():
     """Checks if all fields are complete, ask the user if the submitted details are correct and finally appends the details to the 'Pass_store' file"""
 
-    website = website_entry.get()
+    website = website_entry.get().title()
     email = email_entry.get()
     password = password_entry.get()
 
@@ -67,7 +67,7 @@ website_entry.focus()
 website_entry.grid(column=1, row=1, columnspan=2)
 
 email_entry = Entry(width=60)
-email_entry.insert(END, string=("nekembeb@gmail.com"))
+email_entry.insert(END, string=("boris@email.com"))
 email_entry.grid(column=1, row=2, columnspan=2)
 
 password_entry = Entry(width=34)
