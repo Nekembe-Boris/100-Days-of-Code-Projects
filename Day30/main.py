@@ -57,7 +57,7 @@ def save_details():
                 website_entry.delete(0, END)
                 password_entry.delete(0, END)
 
-def search_data():
+def search_password():
     """searches and prints password using the name of the website and also alerts if no password has been stored"""
 
     website = website_entry.get().title()
@@ -106,7 +106,7 @@ website_entry = Entry(width=35)
 website_entry.focus()
 website_entry.grid(column=1, row=1)
 
-search_button = Button(text="Search", font=(FONT_NAME, 10, "bold"), width=15, command=search_data)
+search_button = Button(text="Search", font=(FONT_NAME, 10, "bold"), width=15, command=search_password)
 search_button.grid(column=2, row=1)
 
 email_entry = Entry(width=60)
