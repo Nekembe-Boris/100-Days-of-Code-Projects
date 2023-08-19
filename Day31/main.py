@@ -16,7 +16,7 @@ chosen_word = {}
 
 
 def cards():
-
+    """This function displays new cards when the function starts"""
 
     global chosen_word
     global timer
