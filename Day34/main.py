@@ -1,6 +1,7 @@
 from data import question_data
 from question_model import QuestionModel
 from quiz_brain import QuizBrain
+from ui import QuizUi
 
 question_vault = []
 
@@ -11,9 +12,10 @@ for item in question_data:
 
 
 quiz = QuizBrain(question_vault)
+quiz_ui = QuizUi(quiz)
 
-while quiz.questions_left() == True:
-    quiz.next_question()
+# while quiz.questions_left() == True:
+#     quiz.next_question()
 
 
 print("\nYou've completed the quiz")
