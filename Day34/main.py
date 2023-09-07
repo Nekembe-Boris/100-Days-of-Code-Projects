@@ -14,9 +14,3 @@ for item in question_data:
 quiz = QuizBrain(question_vault)
 quiz_ui = QuizUi(quiz)
 
-# while quiz.questions_left() == True:
-#     quiz.next_question()
-
-
-print("\nYou've completed the quiz")
-print(f"Your final score was {quiz.score}/{quiz.question_number}")
