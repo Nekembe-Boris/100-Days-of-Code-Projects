@@ -15,19 +15,14 @@ class QuizBrain:
             return False
 
     def next_question(self):
-        question = self.question_list[self.question_number]
+        self.question = self.question_list[self.question_number]
         self.question_number += 1
-        q_text = html.unescape(question.text)
+        q_text = html.unescape(self.question.text)
         return f"\nQ.{self.question_number}: {q_text}"
-        # response = input(f"\nQ.{self.question_number}: {q_text}. (True/False)?: ").title()
-        # self.check_answer(response, question.answer)
 
-    def check_answer(self, response, question):
-        if response == question:
+    def check_answer(self, response, question_res):
+        if response == question_res:
             self.score += 1
-            print("You got it right")
+            return True
         else:
-            print("You got it wrong")
-            print(f"Right answer was {question}")
-        print(f"Your current score is {self.score}/{self.question_number}")
-           
+            return False

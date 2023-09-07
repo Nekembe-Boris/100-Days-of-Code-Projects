@@ -1,5 +1,6 @@
 from tkinter import *
 from quiz_brain import QuizBrain
+import time
 
 THEME_COLOR = "#375362"
 
@@ -29,10 +30,10 @@ class QuizUi:
         true_img = PhotoImage(file="./images/true.png")
         false_img = PhotoImage(file="./images/false.png")
 
-        self.false_btn = Button(image=false_img, highlightthickness=0)
+        self.false_btn = Button(image=false_img, highlightthickness=0, command=self.respond_false)
         self.false_btn.grid(row=2, column=1)
 
-        self.true_btn = Button(image=true_img, highlightthickness=0)
+        self.true_btn = Button(image=true_img, highlightthickness=0, command=self.respond_true)
         self.true_btn.grid(row=2, column=0)
 
         self.get_next_q()
@@ -41,5 +42,31 @@ class QuizUi:
         self.window.mainloop() 
 
     def get_next_q(self):
+        self.canvas.config(bg="white")
         new_ques = self.quiz.next_question()
         self.canvas.itemconfig(self.canvas_text, text=new_ques)
+
+        if self.quiz.questions_left() == False:
+            self.canvas.itemconfig(self.canvas_text, text=f"End of Quiz\nFinal score is {self.score}/{len(self.quiz.question_list)}")
+            self.true_btn.config(state="disabled")
+            self.false_btn.config(state="disabled")
+
+
+    def respond_true(self):
+        answer = self.quiz.check_answer("True", self.quiz.question.answer)
+        self.feedback(answer)
+
+
+    def respond_false(self):
+        answer = self.quiz.check_answer("False", self.quiz.question.answer)
+        self.feedback(answer)
+        
+
+    def feedback(self, response):
+        if response ==True:
+            self.canvas.config(bg="green")
+            self.score += 1
+            self.score_label.config(text=f"Score: {self.score}")
+        else:
+            self.canvas.config(bg="red")
+        self.window.after(1000, self.get_next_q)

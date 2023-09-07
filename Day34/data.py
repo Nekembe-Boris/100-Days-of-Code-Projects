@@ -12,7 +12,4 @@ data = response.json()
 
 question_data = data["results"]
 
-# for item in question_data:
-
-#     print(item["question"])
 
