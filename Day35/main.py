@@ -9,7 +9,7 @@ api_key = "KEY"
 
 
 MY_EMAIL = "aminaousmanu@gmail.com"
-PASSWORD = "PASSWORD"
+PASSWORD = "wyehocmtatsbatlm"
 
 parameters = {
     "lat" : LAT,
