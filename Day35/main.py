@@ -4,7 +4,7 @@ import smtplib
 
 LAT = 4.05
 LON = 9.69
-api_key = "cd49509a6051cc5efdc28224dfc1204d"
+api_key = ''
 
 MY_EMAIL = "aminaousmanu@gmail.com"
 PASSWORD = "wyehocmtatsbatlm"
