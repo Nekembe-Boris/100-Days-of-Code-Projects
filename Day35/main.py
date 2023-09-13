@@ -1,13 +1,15 @@
 import requests
 import smtplib
+import os
 
 
 LAT = 4.05
 LON = 9.69
-api_key = ''
+api_key = "KEY"
+
 
 MY_EMAIL = "aminaousmanu@gmail.com"
-PASSWORD = "wyehocmtatsbatlm"
+PASSWORD = "PASSWORD"
 
 parameters = {
     "lat" : LAT,
