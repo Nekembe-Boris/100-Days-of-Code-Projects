@@ -8,7 +8,7 @@ LAT = 4.061536
 LON = 9.786072
 
 MY_EMAIL = "aminaousmanu@gmail.com"
-PASSWORD = "wyehocmtatsbatlm"
+PASSWORD = "PASSWORD"
 
 current_time = dt.datetime.now()
 

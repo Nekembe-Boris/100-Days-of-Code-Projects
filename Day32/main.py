@@ -6,7 +6,7 @@ import random
 
 current_date = dt.datetime.now()
 MY_EMAIL = "aminaousmanu@gmail.com"
-PASSWORD = "wyehocmtatsbatlm"
+PASSWORD = "PASSWORD"
 
 data = pandas.read_csv("birthdays.csv")
 
