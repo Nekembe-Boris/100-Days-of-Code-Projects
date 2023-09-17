@@ -4,7 +4,7 @@ import datetime as dt
 TOKEN = "TOKEN"
 USERNAME =  "kirkcaves"
 
-date = dt.datetime(year=2023, month=9, day=12)
+date = dt.datetime.now()
 
 
 
