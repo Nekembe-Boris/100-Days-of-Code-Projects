@@ -3,11 +3,15 @@ import datetime as dt
 
 today = dt.datetime.now()
 
-NUTRITION_KEY = "522530398c5bdc4c4fd9311fd261f96e"
-NUTRITION_ID = "de99734b"
+NUTRITION_KEY = "API-KEY"
+NUTRITION_ID = "ID"
 
 NATURAL_EXERCISE_ENDPOINT = "https://trackapi.nutritionix.com/v2/natural/exercise"
 SHEETY_ENPOINT = "https://api.sheety.co/81c96d16b3847233dfc174caba89a12c/workPlan/sheet1"
+
+bearer_headers = {
+"Authorization": "Bearer TOKEN"
+}
 
 natural_lan_header = {
     "x-app-id": NUTRITION_ID,
@@ -21,6 +25,8 @@ natural_lan_param = {
     "height_cm":167.64,
     "age":30
 }
+
+
 
 natural_lan_response = requests.post(url=NATURAL_EXERCISE_ENDPOINT, json=natural_lan_param, headers=natural_lan_header)
 natural_lan_response.raise_for_status()
@@ -39,4 +45,4 @@ for info in (data["exercises"]):
         }
     }
 
-    post_response = requests.post(url=SHEETY_ENPOINT, json=details)
+    post_response = requests.post(url=SHEETY_ENPOINT, json=details, headers=bearer_headers)
