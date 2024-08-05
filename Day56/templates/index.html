@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Nekembe Boris</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo-tab">
+            <span class="logo">NB</span>
+        </div>
+
+
+        <input type="checkbox" class="nav-toggle" id="nav-toggle">
+
+        <nav class="nav">
+
+            <ul>
+                <li>
+                    <a href="#">Intro</a>
+                </li>
+
+                <li>
+                    <a href="#">Porfolio</a>
+                </li>
+
+                <li>
+                    <a href="#">About</a>
+                </li>
+
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+
+        </nav>
+
+        <label for="nav-toggle" class="nav-label"> 
+           <span></span>
+        </label>
+
+    </header>
+
+    <div class="bio">
+
+        <div class="about-bio">
+            <h1>
+                XERXES
+            </h1>
+            <h2>Welcome! I am Nekembe Boris Pokwangeh</h2>
+            <p>
+                Hello, I am a Python developer! I can help you build a project, featre or website. Look through some of my work and experience! If you like what you see and have a project you need coded, don't hesitate to contact me.
+            </p>
+        </div>
+
+        <div class="social-media">
+            <span class="social-list">Platforms</span>
+            <ul>
+                <li>
+                    <a target="target_name" href="https://github.com/Nekembe-Boris">
+                        <span class="iconify media" data-icon="akar-icons:github-fill" data-inline="false" style="color: #f9855b;"></span>
+                    </a>
+
+                </li>
+
+                <li>
+                    <a target="target_name" href="www.linkedin.com/in/nekembe-boris-pokwangeh">
+                        <span class="iconify media" data-icon="brandico:linkedin" data-inline="false" style="color: #f9855b;"></span>
+                    </a>
+                </li>
+
+                <li>
+                    <a target="target_name" href="https://medium.com/@nekembeb">
+                        <span class="iconify media" data-icon="vs:m-square" data-inline="false" style="color: #f9855b;"></span>
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+    <div class="works">
+        <h2>
+            My best works
+        </h2>
+        <div class="displays">
+
+            <div class="project-picture">
+
+                <img src="static/images/version2.png" class="web-display" alt="project images">
+                <h3>XERXES</h3>
+
+                <div class="hover">
+
+                    <div class="project">
+
+                        <ul>
+                            <li class="code-lan">Python</li>
+                            <li class="code-lan">Pandas</li>
+                            <li class="code-lan">Tkinter library</li>
+                            <li class="code-lan">CustomTkinter library</li>
+                        </ul>
+                    </div>
+                    <div class="view-project">
+                        <a target="target_name" href="https://github.com/Nekembe-Boris/XERXES">view-project</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="project-picture ">
+
+                <img src="static/images/display1.jpg " class="web-display" alt="project images">
+                <h3>KAIJU.za</h3>
+
+                <div class="hover">
+
+                    <div class="project">
+
+                        <ul>
+                            <li class="code-lan">HTML/CSS</li>
+                            <li class="code-lan">Ruby on Rails</li>
+                            <li class="code-lan">JavaScript</li>
+                        </ul>
+
+                    </div>
+
+                    <div class="view-project">
+
+                        <a href="#">view-project</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="portfolio">
+
+        <div class="about-me">
+            <h2>About me</h2>
+            <p>
+                I like to think of myself as a <em>"student of the world"</em>. I have undertaken a handful of web development projects; some requiring me to learn on the go. I believe that the more we know, the more we discover what we knew not. I am
+                open to projects that will exploit my knowledge base and also expand upon it...
+            </p>
+
+            <div class="resume">
+                <a href="#">get my resume</a>
+            </div>
+
+        </div>
+
+        <div class="skills">
+
+            <div>
+                <h2>Languages</h2>
+                <ul>
+                    <li>Python</li>
+                    <li>HTML/CSS</li>
+                    <li>JavaScript</li>
+                    <li>SQL</li>
+                </ul>
+            </div>
+
+            <hr class="horizontal-line">
+
+            <div>
+                <h2>Developer Tools</h2>
+                <ul>
+                    <li> VS Code </li>
+                    <li> Flask </li>
+                    <li> Gitpod </li>
+                    <li>Git/Github</li>
+                    <li> AWS Cloud Platform </li>
+                </ul>
+            </div>
+
+            <hr class="horizontal-line">
+
+        </div>
+
+    </div>
+
+    <div class="contact-info">
+
+        <div class="info-box">
+            <h3>Leave a Message</h3>
+            <p>For collaborations on projects, job proposals, meetups or any inquiry, I am an email away </p>
+
+            <form class="form-field">
+                <input type="text" placeholder="Name" class="field">
+                <input type="text" placeholder="Email" class="field">
+                <textarea name="message" id="message" cols="30" rows="10" placeholder="Enter message"></textarea>
+            </form>
+
+            <div class="form-submit">
+                <button type="submit" name="submit" class="form-button">Get in touch</button>
+            </div>
+
+            <div class="footer">
+                <p class="email">nekembeb@gmail.com</p>
+
+                <ul>
+                    <li>
+                        <span class="iconify account" data-icon="codicon:github" data-inline="false" style="color: white;"></span>
+                    </li>
+                    <li>
+                        <span class="iconify account" data-icon="akar-icons:linkedin-fill" data-inline="false" style="color: white;"></span>
+                    </li>
+                    <li>
+                        <span class="iconify account" data-icon="radix-icons:twitter-logo" data-inline="false" style="color: white;"></span>
+                    </li>
+                    <li>
+                        <span class="iconify account" data-icon="dashicons:reddit" data-inline="false" style="color: white;"></span>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="main-btm-nav">
+
+                <div class="bottom-nav">
+
+                    <input type="checkbox" class="box" id="box">
+
+                    <section>
+                        <ul>
+                            <li class="nav-list">
+                                <span class="platform">github</span>
+                                <div class="btm-nav">
+                                    <span class="iconify links" data-icon="bx:bxl-github" data-inline="false" style="color: white;"></span>
+                                </div>
+                            </li>
+
+                            <li class="nav-list">
+                                <span class="platform">linkedin</span>
+                                <div class="btm-nav">
+                                    <span class="iconify links" data-icon="jam:linkedin-circle" data-inline="false" style="color: white;"></span>
+                                </div>
+                            </li>
+
+                            <li class="nav-list">
+                                <span class="platform">twitter</span>
+                                <div class="btm-nav">
+                                    <span class="iconify links" data-icon="radix-icons:twitter-logo" data-inline="false" style="color: white;"></span>
+                                </div>
+                            </li>
+
+                            <li class="nav-list">
+                                <span class="platform">message</span>
+                                <div class="btm-nav">
+                                    <span class="iconify links" data-icon="jam:envelope-f" data-inline="false" style="color: white;"></span>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </section>
+
+                    <label for="box" class="box-label"> 
+
+                      <span class="iconify cross" data-icon="mdi:crosshairs-gps" data-inline="false" style="color: white;"> </span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        <p>
+            &copy;2021 XERXES
+        </p>
+    </div>
+
+</body>
+
+</html>
