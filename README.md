@@ -38,3 +38,35 @@ So far, all project ideas came from the Udemy course: [100 Days of Code: The Com
 - [Day 29:](https://github.com/Nekembe-Boris/100-Days-of-Code-Projects/tree/main/Day29) Building a Password Manager GUI App with Tkinter
 - [Day 30:](https://github.com/Nekembe-Boris/100-Days-of-Code-Projects/tree/main/Day30) Errors, Exceptions and JSON Data: Improving the Password Manager
 - [Day 31:](https://github.com/Nekembe-Boris/100-Days-of-Code-Projects/tree/main/Day31) Flash Card App Capstone Project
+
+## 👨‍💻 Intermediate+
+- [Day 32:](https://github.com/Nekembe-Boris/100-Days-of-Code-Projects/tree/main/Day32) Send Email (smtplib) & Manage Dates (datetime) - Automated Birthday Wisher
+- [Day 33:](https://github.com/Nekembe-Boris/100-Days-of-Code-Projects/tree/main/Day33) API Endpoints & API Parameters - ISS Overhead Notifier
+- [Day 34:](https://github.com/Nekembe-Boris/100-Days-of-Code-Projects/tree/main/Day34) API Practice - Creating a GUI Quiz App
+- [Day 35:](https://github.com/Nekembe-Boris/100-Days-of-Code-Projects/tree/main/Day35) Keys, Authentication & Environment Variables - Telegram Rain Notifier
+- [Day 36:](https://github.com/Nekembe-Boris/100-Days-of-Code-Projects/tree/main/Day36) Stock Trading News Alert Project
+- [Day 37:](https://github.com/Nekembe-Boris/100-Days-of-Code-Projects/tree/main/Day37) Habit Tracking Project: API Post Requests & Headers
+- [Day 38:](https://github.com/Nekembe-Boris/100-Days-of-Code-Projects/tree/main/Day38) Workout Tracking Using Google Sheets
+- [Day 39:](https://github.com/Nekembe-Boris/100-Days-of-Code-Projects/tree/main/Day39) Capstone Part 1: Flight Deal Finder
+- [Day 40:](https://github.com/Nekembe-Boris/100-Days-of-Code-Projects/tree/main/Day40) Capstone Part 2: Flight Club
+- [Day 41:](https://github.com/Nekembe-Boris/100-Days-of-Code-Projects/tree/main/Day41) Introduction to HTML
+- [Day 42:](https://github.com/Nekembe-Boris/100-Days-of-Code-Projects/tree/main/Day42) Intermediate HTML
+- [Day 43:](https://github.com/Nekembe-Boris/100-Days-of-Code-Projects/tree/main/Day43) Introduction to CSS
+- [Day 44:](https://github.com/Nekembe-Boris/100-Days-of-Code-Projects/tree/main/Day44) Intermediate CSS
+- [Day 54:](https://github.com/Nekembe-Boris/100-Days-of-Code-Projects/tree/main/Day54) Introduction to Web Development with Flask
+- [Day 55:](https://github.com/Nekembe-Boris/100-Days-of-Code-Projects/tree/main/Day55) HTML & URL Parsing in Flask and the Higher Lower Game
+- [Day 56:](https://github.com/Nekembe-Boris/100-Days-of-Code-Projects/tree/main/Day56) Rendering HTML/Static Files and Using Website Templates
+- [Day 57:](https://github.com/Nekembe-Boris/100-Days-of-Code-Projects/tree/main/Day57) Templating with Jinja in Flask Applications
+- [Day 58:](https://github.com/Nekembe-Boris/100-Days-of-Code-Projects/tree/main/Day58) Web Foundation Boostrap
+
+## 🏆 Advanced
+- [Day 59:](https://github.com/Nekembe-Boris/100-Days-of-Code-Projects/tree/main/Day59) Blog Capstone Project Part 2 - Adding Styling
+- [Day 60:](https://github.com/Nekembe-Boris/100-Days-of-Code-Projects/tree/main/Day60) Make POST Requests with Flask and HTML Forms
+- [Day 61:](https://github.com/Nekembe-Boris/100-Days-of-Code-Projects/tree/main/Day61) Building Advanced Forms with Flask-WTForms
+- [Day 62:](https://github.com/Nekembe-Boris/100-Days-of-Code-Projects/tree/main/Day62) Flask, WTForms, Bootstrap, and CSV - Coffee & Wifi Project
+- [Day 63:](https://github.com/Nekembe-Boris/100-Days-of-Code-Projects/tree/main/Day63) Databases and with SQLite and SQLAlchemy
+- [Day 64:](https://github.com/Nekembe-Boris/100-Days-of-Code-Projects/tree/main/Day64) My Top 10 Movies Website
+- [Day 65:](https://github.com/Nekembe-Boris/100-Days-of-Code-Projects/tree/main/Day65) How to Create a Website That People Will Love
+- [Day 66:](https://github.com/Nekembe-Boris/100-Days-of-Code-Projects/tree/main/Day66) Building Your Own API with RESTful Routing
+- [Day 67:](https://github.com/Nekembe-Boris/100-Days-of-Code-Projects/tree/main/Day67) Blog Capstone Project Part 3 - RESTful Routing
+- [Day 68:](https://github.com/Nekembe-Boris/100-Days-of-Code-Projects/tree/main/Day68) Authentication with Flask
