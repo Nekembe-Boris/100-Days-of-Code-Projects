@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% if key %}
+<div class="box">
+    <h1>
+        Your key is {{ key }}
+    </h1>
+</div>
+{% else %}
+<div class="box">
+    <h1>WELCOME!</h1>
+	<h2>Register</h2>
+    <form action="{{ url_for('register') }}" method="post">
+		<input type="email" name="email" placeholder="Email" required="required" />
+        <button type="submit" class="btn btn-primary btn-block btn-large">
+            Sign me up.
+        </button>
+    </form>
+</div>
+{% endif %}
+
+{% endblock %}
