@@ -108,3 +108,33 @@ def home():
 #             return render_template('register.html', key=a_key)
     
 #     return render_template('register.html')
+
+
+@app.route('/random')
+def random_orp():
+    """
+    GET random orphanage data
+    """
+    country = random.choice(TABLE_OBJ)
+    result = db.session.execute(db.select(country)).scalars().all()
+    return jsonify([data_pattern(random.choice(result), country)])
+
+
+@app.route('/all')
+def all_orph():
+    """
+    Request orphanage data in stated nation
+    """
+    nation = request.args.get('nation')
+    if nation not in TABLE_NAMES:
+        return jsonify(
+            no_info = {
+            "error" : f"Sorry no Orpahange record from {nation}"
+            }
+        )
+
+    for obj in TABLE_OBJ:
+        if obj.__name__.lower() == nation.lower():
+            result = db.session.execute(db.select(obj)).scalars().all()
+
+    return jsonify([data_pattern(orph, obj) for orph in result])
