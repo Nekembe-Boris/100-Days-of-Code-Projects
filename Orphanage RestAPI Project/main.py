@@ -50,3 +50,61 @@ with app.app_context():
 TABLE_OBJ = [Nigeria, cameroon]
 TABLE_NAMES = [table.lower() for table in list(db.metadata.tables.keys())]
 COL_NAMES = [col.name.lower() for col in cameroon.__table__.columns]
+
+def data_pattern(data, nation):
+    """
+    :param data - The query recieved from database,
+    :param code - Determines if tp use state or region
+
+    Give the structure of json returned
+    """
+
+    d_json = {
+        'uid' : data.id,
+        'name' : data.name,
+        'nation' : nation.__name__.upper(),
+        'location' : data.location,
+        'contact' : {
+            'phone' : data.phone,
+            'email' : data.email
+        },
+        'website' : data.website
+    }
+
+    return d_json
+
+def resquest_code(err:int):
+    """
+    Returns error code
+    """
+    url_end = 'https://status.js.org/codes.json'
+
+    data= requests.get(url=url_end, timeout=10).json()
+
+    err_details = {
+
+        f"Error {err}" : data[str(err)]['description']
+    }
+    return err_details
+
+@app.route('/')
+def home():
+    return render_template('register.html')
+
+# @app.route('/register', methods=['GET', 'POST'])
+# def register():
+#     mail = request.form.get('email')
+
+#     if request.method == 'POST':
+#         if mail:
+#             a_key = ''.join(random.choices(string.ascii_letters, k=15))
+
+#             new = User(
+#                 email = mail,
+#                 api_key = a_key
+#             )
+#             db.session.add(new)
+#             db.session.commit()
+#             return render_template('register.html', key=a_key)
+    
+#     return render_template('register.html')
