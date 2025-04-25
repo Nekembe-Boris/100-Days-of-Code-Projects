@@ -91,23 +91,6 @@ def resquest_code(err:int):
 def home():
     return render_template('register.html')
 
-# @app.route('/register', methods=['GET', 'POST'])
-# def register():
-#     mail = request.form.get('email')
-
-#     if request.method == 'POST':
-#         if mail:
-#             a_key = ''.join(random.choices(string.ascii_letters, k=15))
-
-#             new = User(
-#                 email = mail,
-#                 api_key = a_key
-#             )
-#             db.session.add(new)
-#             db.session.commit()
-#             return render_template('register.html', key=a_key)
-    
-#     return render_template('register.html')
 
 
 @app.route('/random')
