@@ -121,3 +121,6 @@ def all_orph():
             result = db.session.execute(db.select(obj)).scalars().all()
 
     return jsonify([data_pattern(orph, obj) for orph in result])
+
+if __name__ == "__main__":
+    app.run(debug=True)
