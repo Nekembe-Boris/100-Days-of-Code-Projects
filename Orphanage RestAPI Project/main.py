@@ -122,5 +122,49 @@ def all_orph():
 
     return jsonify([data_pattern(orph, obj) for orph in result])
 
+@app.route('/location')
+def location_orp():
+    """
+    Request orphanage data in stated nation and state
+    """
+    nation = request.args.get('nation').lower()
+    location = request.args.get('loc').title()
+    
+    if nation not in TABLE_NAMES :
+        return jsonify(resquest_code(416))
+    for obj in TABLE_OBJ:
+        if obj.__name__.lower() == nation:
+            result = db.session.execute(db.select(obj).where(obj.location == location)).scalars().all()
+            if not result:
+                return jsonify(resquest_code(400))
+    
+    return jsonify([data_pattern(orph, obj) for orph in result])
+
+
+@app.route('/new', methods=['POST'])
+def new_orph():
+    """
+    Add a new data orphanage
+    """
+    if (nation := request.args.get('nation').lower()) in TABLE_NAMES :
+
+        for obj in TABLE_OBJ:
+            if obj.__name__.lower() == nation:
+                new = obj(
+                        name=request.form.get("name"),
+                        location=request.form.get("loc"),
+                        phone=request.form.get("phone"),
+                        email=request.form.get("email"),
+                        website=request.form.get("web_url")
+                )
+                db.session.add(new)
+                db.session.commit()
+                return jsonify(
+                    {
+                        "response" : {"success" : f"{resquest_code(201)}"}
+                    }
+                )
+    return jsonify(resquest_code(501))
+
 if __name__ == "__main__":
     app.run(debug=True)
